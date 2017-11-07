@@ -1,0 +1,36 @@
+\RequirePackage{ifluatex}
+
+\documentclass[a4paper, ngerman, twocolumn]{scrartcl}
+
+\input{../common/config}
+
+\title{Ein sehr aussagekr\"aftiger Titel}
+\author {
+  Hardy Hambsch
+  \and
+  Marius Nolden
+  \and
+  Jessica Ahring
+  \and
+  Christian Peters
+}
+\date{\today}
+
+%\addbibresource{common/references.bib}
+
+\begin{document}
+
+\maketitle
+
+%\onehalfspacing
+
+% input statt include zur Vermeidung von \clearpage
+\input{einleitung}
+
+\input{testinhalt}
+
+%\printbibliography
+
+%\listoffigures
+
+\end{document}
