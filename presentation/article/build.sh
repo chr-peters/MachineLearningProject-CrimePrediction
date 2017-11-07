@@ -1,9 +1,11 @@
 #! /bin/sh
 
+MAIN_FILE="Group13 Project Report.tex"
+
 # set and create output directory
 OUTPUT_DIR=latex_output
 mkdir $OUTPUT_DIR
 
-# compile twice
-pdflatex -output-directory="$OUTPUT_DIR" main.tex && pdflatex -output-directory="$OUTPUT_DIR" main.tex
+# compile twice when successful once
+pdflatex -output-directory="$OUTPUT_DIR" "$MAIN_FILE" && pdflatex -output-directory="$OUTPUT_DIR" "$MAIN_FILE"
 
