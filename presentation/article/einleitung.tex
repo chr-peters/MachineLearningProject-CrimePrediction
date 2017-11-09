@@ -1,2 +1,29 @@
-\section{Die Einleitung}
-Ein paar Sachen \"uber Machine Learning.
+\section{Introduction}
+
+To recognize possible crimes of potential criminals we analyze the following criminal statistics from 2016 by the Federal Criminal Police Office of Germany (BKA):
+
+\vspace*{-0.2cm}
+
+\begin{itemize}
+	\setlength{\itemsep}{-2pt}
+	\item main table
+	\item suspects divided by age and gender
+	\item other information about the suspects
+\end{itemize}
+In order to solve this problem, we first examine the following features of the candidate:  
+
+\vspace*{-0.2cm}
+
+\begin{itemize}
+	\setlength{\itemsep}{-2pt}
+	\item gender
+	\item age
+	\item foreigner
+	\item population of residence
+	\item drug consumption
+	\item gun ownership
+	\item former suspect
+\end{itemize}
+Based on this data, the program predicts the probability of the crimes the person is most likely to commit. To achieve this we employ the k-Nearest Neighbor approach as well as a neural network.   
+
+It is important to emphasize that this program can only be reasonably applied to a context where other signs already indicate that the given person is presumably a suspect.
