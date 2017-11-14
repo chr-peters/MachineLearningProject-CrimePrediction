@@ -1,0 +1,15 @@
+An Experimental Study of Classification Algorithms for Crime Prediction
+=======================================================================
+Source: http://52.172.159.94/index.php/indjst/article/download/31230/27028
+
+Task:
+- Predict "crime category" for city (low, medium, high) based on city-attributes
+
+Data:
+- Features of the US-cities (population, medIncome, perCapitaIncome, unemployment, ...)
+- Artificial attribute "crime category" is added based on violent crimes per 100k population
+- Source: http://archive.ics.uci.edu/ml/datasets/Communities+and+Crime
+
+Approaches:
+- Decision Tree
+- Naive Bayesian Classifier
