@@ -1,0 +1,10 @@
+Hate Crimes per City: https://github.com/fivethirtyeight/data/tree/master/hate-crimes
+
+Communities and Crime: http://archive.ics.uci.edu/ml/datasets/Communities+and+Crime
+
+Crime in Baltimore: https://www.kaggle.com/sohier/crime-in-baltimore/data
+
+Crime in Chicago: https://www.kaggle.com/currie32/crimes-in-chicago/data
+
+Homicide Report: https://www.kaggle.com/murderaccountability/homicide-reports/data
+===============
