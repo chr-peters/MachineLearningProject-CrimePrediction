@@ -1,29 +1,11 @@
 \section{Introduction}
 
-To recognize possible crimes of potential criminals we analyze the following criminal statistics from 2016 by the Federal Criminal Police Office of Germany (BKA):
+To emphasize the influence of certain factors on the criminal rates of cities, we use different classifiers to predict the criminal category (e.g. high, low, medium) the city falls into. 
 
-\vspace*{-0.2cm}
+The classifiers employed are namely k-Nearest Neighbor, Decision Tree, Naive Bayer Classifier, Neural Network, \ldots. 
 
-\begin{itemize}
-	\setlength{\itemsep}{-2pt}
-	\item main table
-	\item suspects divided by age and gender
-	\item other information about the suspects
-\end{itemize}
-In order to solve this problem, we first examine the following features of the candidate:  
+After training each classifier on its own the obtained models are combined into an ensemble, the decision of which is based on a majority vote, to achieve even better results. 
 
-\vspace*{-0.2cm}
+To evaluate the result we use the common evaluation metrics  e.g accuracy, recall, precision.
 
-\begin{itemize}
-	\setlength{\itemsep}{-2pt}
-	\item gender
-	\item age
-	\item foreigner
-	\item population of residence
-	\item drug consumption
-	\item gun ownership
-	\item former suspect
-\end{itemize}
-Based on this data, the program predicts the probability of the crimes the person is most likely to commit. To achieve this we employ the k-Nearest Neighbor approach as well as a neural network.   
-
-It is important to emphasize that this program can only be reasonably applied to a context where other signs already indicate that the given person is presumably a suspect.
+In the course of this research the open source data mining software WEKA is used to apply the algorithms to the datasets.
