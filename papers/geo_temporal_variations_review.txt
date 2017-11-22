@@ -1,0 +1,54 @@
+source: http://www.sciencedirect.com/science/article/pii/S0169207003000955
+
+Predicting the geo-temporal variations of crime and disorder
+
+
+Keywords: crime forecasting, cluster analysis, geographic information system, artificial neural networks, gamma test, autoregressive model
+
+Dataset: 18.498 crime incidents containing time, day, month, weather, location(geographical coordinates)
+
+Workflow:
+
+	A: Spatial Analysis
+		1. Point Density Analysis: Identification of higher than average crime incidence centroids
+		2. Cluster Analysis: Identification of cluster regions from high incidence centroids
+		3. Cluster Allocation: Allocation of high incidence centroids to clusters
+		4. Cluster Boundung: Population of each cluster with crime incidence data(one ANN per cluster)
+
+	B: Cluster Modelling
+		1. Gamma Test: Determine fitness and required data configuration
+		2. Model implementation: Model implementation for each identified cluster
+
+	C: Prediction
+		Incidence prediction for each cluster based upon model
+
+Overview:
+
+	The paper demonstrates how artificial neural networks can be trained using geographical clusters of crime data to facilitate predictive modelling. The extent to which each cluster has the potential to facilitate prediction is estimated using a novel technique known as the Gamma test (GT).
+
+	Building forecasting models with neural networks is not a new phenomenon. In the case of crime level forecasting, the models tend to be autoregressive with input and output vectors being counts of crime: multiple inputs yt−1…yt−n and a single output yt. The models built in this paper are of this type.
+
+	Implementation of an ANN model requires careful consideration of model parameters impacting model stability and efficiency. These included decisions that concern architecture type (number of input/output nodes and hidden layers), selection of training algorithm, and volume of data to be used for training and testing.
+
+	The ANN presented in this paper comprises of an input layer (corresponding to the length of the input vector), two layers of hidden nodes, and an output layer providing the forecast value. Modelling a time series involves generating a set of input vectors and corresponding output values. The optimal number of lags for the autoregressive model is established by generating a Gamma statistic for incremental lag lengths. The lag length is that with Gamma statistic closest to zero.
+
+	Providing a measure of noise present in the data set allows training to be terminated at a near optimal point. This is because an ANN will tend to fit useful data before any noise.
+
+Experimental work:
+
+	This section compares forecast performance of the ANN model just discussed with a linear regression model and a modification of the random walk. The modified random walk forecasts the change from tt to tt+1 based upon the average change from one period to the next. For example, taking the known number of crimes for a Thursday, the forecast for Friday is based upon the average observed change (over the entire time series) between Thursday and Friday.
+
+Results: 
+	Cluster Seven, a residential area
+		- increased tendency for violent crime towards weekends
+		- low incidence rates -> cluster is difficult to forecast accurately
+
+	Cluster Four, city centre
+		- higher incidence of crime on weekends, with peeks during times of known sporting events
+		- in this case, the ANN forecasts much more accurately than the regression or modified random walk methods
+
+Conclusion:
+	The ANN generally exhibits a superior capacity to model the trends within each cluster. A modified random walk was used a naı̈ve forecasting method, the results demonstrating a comparable forecasting accuracy to the other techniques for cluster seven (residential area) where the GT indicated a chaotic data series.
+	
+		
+Specific localities might best be modelled independently of the other data at specific times of the year (for example, sporting events that generate exceptionally high crime spikes that fall out of a generalised model). These spikes could be extracted and treated as a separate modelling exercise, given sufficient high quality data. Alternatively, a statistical analysis of exceptional events would provide an estimate of the change against normal levels that could subsequently be encoded as a set of rules that modifies the incidence count accordingly. These two differing approaches will form the basis for continued experimentation.
