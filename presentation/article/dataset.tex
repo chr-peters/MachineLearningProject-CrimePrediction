@@ -1,21 +1,24 @@
 \section{Dataset}
 
-In the course of this research we use real crime data which can be obtained from Machine Learning Repository\footnote{blablabla}.
+In the course of this research we use real crime data which can be obtained from Machine Learning Repository\footnote{http://archive.ics.uci.edu/ml/datasets/Communities+and+Crime}.
 
 From the 128 attribute the dataset provides, only the most significant (continuous) features are chosen:
 
 \begin{itemize}
 	\setlength{\itemsep}{-2pt}
-	\item population for community
+	\item Population
 	\item Median household income
 	\item Median family income
 	\item Per capita income
 	\item Num. of people under poverty level
 	\item Percentage of people 25 and over with less than a 9th grade education
 	\item Percentage of people 25 and over that are not high school graduates
-	\item Percentage of people 25 and over in the labor force, and unemployed
-	\item Percentage of people 25 and over who are employed
+	\item Percentage of people 25 and over with a bachelor’s degree or higher education
+	\item Percentage of people 16 and over in the labor force, and unemployed
+	\item Percentage of people 16 and over who are employed
 	\item Total number of violent crimes per 100K population
 \end{itemize}
 
-The goal is to predict the crime category, which is an artificial attribute based on the total number of violent crimes per 100K population. This class is divided into high, medium and low. 
+The goal is to predict the crime category, which is an \textit{artificial}\footnote{this attribute is added by us}, discrete, ordinal attribute. The values of this attributes, i.e. the classes we are trying to predict,  are obtained by clustering the attribute "total number of violent crimes per 100K population" into three labels: "high", "medium" and "low". To accomplish this we use an unsupervised learning approach. 
+
+For predicting the "crime category", the attribute "total number of violent crimes per 100K population" is removed from the dataset, because it is already represented by the class division and would harm the ability of the classifier to draw conclusions from other relevant attributes.

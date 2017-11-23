@@ -1,1 +1,36 @@
 \section{Literature Review}
+A similar approach to ours was already developed by the authors of \cite{indian} who employed "WEKA" for predicting the crime category using the same data as well. In order to do this, they extracted the following features:
+
+\begin{itemize}
+	\setlength{\itemsep}{-2pt}
+	\item State
+	\item Population
+	\item Median household income
+	\item Median family income
+	\item Per capita income
+	\item Num. of people under poverty level
+	\item Percentage of people 25 and over with less than a 9th grade education
+	\item Percentage of people 25 and over that are not high school graduates
+	\item Percentage of people 25 and over with a bachelor’s degree or higher education
+	\item Percentage of people 16 and over in the labor force, and unemployed
+	\item Percentage of people 16 and over who are employed
+	\item Total number of violent crimes per 100K population
+\end{itemize}
+
+Unlike us they did not use unsupervised clustering to determine the division of the crime category into "high", "medium" and "low", but they set the relevant boundaries themselves. 
+While they only used a decision tree and a Naive Bayes Classifier to predict the class, we use an ensemble of different classifiers, which also includes the ones they choose. 
+To measure the results we will use the same metrics. This way we will be able to compare the different results. \\
+
+
+\noindent In contrast to those approaches there is a different approach illustrated in \cite{forecast}. In order to predict crime in the future they analyze a dataset which contains the following attributes:
+\begin{itemize}
+	\setlength{\itemsep}{-2pt}
+	\item Time
+	\item Day
+	\item Month
+	\item Weather
+	\item Location(geographical coordinates) 
+\end{itemize}
+The records in the dataset are geographically mapped onto the certain regions of the United States of America. Using their own implementation of a cluster analysis they detect hot-spots of crime according to the given features. Afterwards an artificial neural network tries to forecast crime activity in the future. 
+
+\vspace*{\fill}
