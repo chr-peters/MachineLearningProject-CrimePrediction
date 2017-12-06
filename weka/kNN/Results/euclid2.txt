@@ -1,0 +1,58 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.lazy.IBk -K 1994 -W 0 -X -F -A "weka.core.neighboursearch.LinearNNSearch -A \"weka.core.EuclideanDistance -R first-last\""
+Relation:     crimepredict-weka.filters.unsupervised.attribute.Remove-R15,17
+Instances:    1994
+Attributes:   16
+              population
+              householdsize
+              racepctblack
+              racePctWhite
+              racePctAsian
+              racePctHisp
+              agePct16t24
+              agePct65up
+              medIncome
+              PctPopUnderPov
+              PctLess9thGrade
+              PctUnemployed
+              TotalPctDiv
+              PctNotSpeakEnglWell
+              PopDens
+              CrimeCategory
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+IB1 instance-based classifier
+using 23 similarity-weighted nearest neighbour(s) for classification
+
+
+Time taken to build model: 0 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances        1498               75.1254 %
+Incorrectly Classified Instances       496               24.8746 %
+Kappa statistic                          0.4901
+Mean absolute error                      0.2156
+Root mean squared error                  0.333 
+Relative absolute error                 62.0021 %
+Root relative squared error             79.8837 %
+Total Number of Instances             1994     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0,921    0,314    0,834      0,921    0,875      0,638    0,907     0,940     Low
+                 0,540    0,153    0,556      0,540    0,548      0,391    0,809     0,535     Medium
+                 0,263    0,022    0,583      0,263    0,362      0,347    0,896     0,546     High
+Weighted Avg.    0,751    0,241    0,734      0,751    0,735      0,542    0,880     0,792     
+
+=== Confusion Matrix ===
+
+    a    b    c   <-- classified as
+ 1160   94    5 |    a = Low
+  205  282   35 |    b = Medium
+   26  131   56 |    c = High
