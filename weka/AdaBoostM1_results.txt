@@ -1,0 +1,128 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.meta.AdaBoostM1 -P 100 -S 1 -I 20 -W weka.classifiers.trees.J48 -output-debug-info -- -C 0.25 -M 2
+Relation:     crimepredict-weka.filters.unsupervised.attribute.Remove-R17
+Instances:    1994
+Attributes:   17
+              population
+              householdsize
+              racepctblack
+              racePctWhite
+              racePctAsian
+              racePctHisp
+              agePct16t24
+              agePct65up
+              medIncome
+              PctPopUnderPov
+              PctLess9thGrade
+              PctUnemployed
+              TotalPctDiv
+              PctNotSpeakEnglWell
+              PolicPerPop
+              PopDens
+              CrimeCategory
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+AdaBoostM1: Base classifiers and their weights: 
+
+J48 pruned tree
+------------------
+
+racePctWhite <= 0.75
+|   <ca 2000 Zeilen Baum>
+
+Number of Leaves  : 	152
+
+Size of the tree : 	303
+
+
+Weight: 2.57
+
+J48 pruned tree
+------------------
+
+racePctWhite <= 0.79
+| <ca 250 Zeilen Baum>
+
+Number of Leaves  : 	127
+
+Size of the tree : 	253
+
+
+Weight: 2.33
+
+J48 pruned tree
+------------------
+
+|   racepctblack > 0.03: High (8.02/1.24)
+| <ca 200 Zeilen Baum>
+
+Number of Leaves  : 	110
+
+Size of the tree : 	219
+
+
+Weight: 1.68
+
+J48 pruned tree
+------------------
+|   <ca 400 Zeilen Baum>
+
+Number of Leaves  : 	178
+
+Size of the tree : 	355
+
+
+
+<15 Iterationen>
+
+
+
+Weight: 3.02
+
+J48 pruned tree
+------------------
+
+population <= 0.17
+|  <ca 300 Zeilen Baum>
+
+Number of Leaves  : 	165
+
+Size of the tree : 	329
+
+
+Weight: 2.95
+
+Number of performed Iterations: 20
+
+
+Time taken to build model: 9.44 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances        1510               75.7272 %
+Incorrectly Classified Instances       484               24.2728 %
+Kappa statistic                          0.5229
+Mean absolute error                      0.1631
+Root mean squared error                  0.3926
+Relative absolute error                 46.8868 %
+Root relative squared error             94.1761 %
+Total Number of Instances             1994     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0,892    0,248    0,861      0,892    0,876      0,654    0,906     0,937     Low
+                 0,567    0,158    0,560      0,567    0,563      0,407    0,819     0,552     Medium
+                 0,427    0,039    0,569      0,427    0,488      0,442    0,875     0,530     High
+Weighted Avg.    0,757    0,202    0,751      0,757    0,753      0,566    0,880     0,792     
+
+=== Confusion Matrix ===
+
+    a    b    c   <-- classified as
+ 1123  125   11 |    a = Low
+  168  296   58 |    b = Medium
+   14  108   91 |    c = High
