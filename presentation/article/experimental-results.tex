@@ -1,22 +1,23 @@
 \section{Experimental Results}
-The different approaches used for the classification purpose and the corresponding results are described in the following section. 
+The different approaches used for the classification purpose and the corresponding results are described in the following sections. 
 \subsection{Approaches and Settings}
 
 \subsubsection*{k-Nearest Neighbor}
-The first approach we use is the k-Nearest Neighbor classifier. The parameter k is obtained by performing a parameter search on a cross validation. In terms of accuracy k equals 16 was the best choice. To weight the different votes, inverse-distance weighting is employed, the distance measure is Manhattan Metric. 
+The first approach we use is the k-Nearest Neighbor classifier. The parameter k is obtained by performing a parameter search on a leave-one-out cross validation. In terms of accuracy, k equals 16 was the best choice. To weight the different votes, inverse-distance weighting is employed, the distance measure is Manhattan Metric. 
 
 \subsubsection*{Na\"ive Bayes}
 Another approach is the Na\"ive Bayes classifier. Despite some attributes obviously not being independent, we still employed this classifier because it proved to be useful in other areas as well.  
 
 \subsubsection*{Decision Tree}
-We generated a pruned J48-decision tree. Using sparse parameter search for the confidence factor we discovered that a tree with 33 nodes delivers the best results, in terms of accuracy.
+We generated a pruned J48-decision tree. Using sparse parameter search for the confidence factor, we discovered that a tree with 33 nodes delivers the best results, in terms of accuracy.
 
 \subsubsection{Neural Network}
+A multilayer perceptron is used as a neural network. The structure consists of 15 input neurons (one for each attribute), a hidden layer of five neurons precedes the output layer containing three neurons. A learning rate of 0.15 is used, a momentum of 0.075 is applied in each training step. 
 
 \subsection{Results}
 To illustrate the accuracy of the different methods employed, the confusion matrices are presented here. All results are found using 10-fold cross validation.
 
-The results for k-Nearest Neighbor are shown in \fref{tab:mat-knn}.
+The results of k-Nearest Neighbor are shown in \fref{tab:mat-knn}.
 
 \begin{table}[H]
 	\centering
@@ -33,7 +34,7 @@ The results for k-Nearest Neighbor are shown in \fref{tab:mat-knn}.
 }
 \end{table}
 
-The results for Na\"ive Bayes classifier are shown in \fref{tab:mat-nb}.
+The results of the Na\"ive Bayes classifier are shown in \fref{tab:mat-nb}.
 \begin{table}[H]
 	\centering
 	\caption{Confusion matrix of the Na\"ive Bayes classifier}
@@ -65,12 +66,30 @@ The confusion matrix of the decision tree is illustrated in \fref{tab:mat-tree}.
 }
 \end{table}
 
-The resulting tree is shown in the figure \fref{fig:tree}
-%\begin{figure}[H]
-%	\centering
-%	%\includegraphics[]{imagefile}
-%	\caption{Layout of the decision tree}
-%	\label{fig:tree}
-%\end{figure}
+The results of the neural network classifier can be found in \fref{tab:mat-nn}.
+\begin{table}[H]
+	\centering
+	\caption{Confusion matrix of the Neural Network}
+	\label{tab:mat-nn}
+	\resizebox{\columnwidth}{!}{
+		\begin{tabular}[c]{c|ccc||c}
+			classified \(\rightarrow\) & \textbf{Low} & \textbf{Medium} & \textbf{High} & Total\\ \hline
+			Low & \textcolor{blue}{1136} & 117 & 6 & 1259 \\
+			Medium & 148 & \textcolor{blue}{326} & 48 & 522 \\
+			High & 10 & 110 & \textcolor{blue}{93} & 213 \\ \hline \hline
+			Total & 1294 & 553 & 147 & 1994 \\
+		\end{tabular}
+	}
+\end{table}
+
+An overview of the different evaluation metrics is presented in \fref{fig:result}.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\columnwidth]{../../charts/results.png}
+	\caption{Evaluation metrics of the different classifiers}
+	\label{fig:result}
+\end{figure}
 
 \subsection{Discussion}
+Due to the fact that the results do not differ much overall, the efficiency of the different methods is compared. While k-Nearest Neighbor takes the most time by far to reach its conclusion (approximately 30 minutes for a 10-fold cross validation), the Na\"ive Bayes and the decision tree are the fastest classifiers, taking only less than a second. The neural network takes approximately one minute, but delivers the best results. Looking at the confusion matrices, each of the classifiers has its own strength and weaknesses in terms of the different class labels. Based on this observation we look forward to test the majority voting, we hope the results will improve by combining the different approaches. 
+
