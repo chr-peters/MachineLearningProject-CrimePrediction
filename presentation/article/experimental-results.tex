@@ -1,0 +1,41 @@
+\section{Experimental Results}
+The different approaches used for the classification purpose and the corresponding results are described in the following section. 
+\subsection{Approaches and Settings}
+
+\subsubsection*{k-Nearest Neighbor}
+The first approach we use is the k-Nearest Neighbor classifier. The parameter k is obtained by performing a parameter search on a cross validation. In terms of accuracy k equals 16 was the best choice. To weight the different votes, inverse-distance weighting is employed, the distance measure is Manhattan Metric. 
+
+\subsubsection*{Na\"ive Bayes}
+
+\subsection{Results}
+To illustrate the accuracy of the different methods employed, the confusion matrices are presented here. All results are found using 10-fold cross validation.
+
+The results for k-Nearest Neighbor are shown in \fref{tab:mat-knn}.
+\begin{table}[H]
+	\centering
+	\caption{Confusion matrix of the k-Nearest Neighbor classifier with Manhattan distance}
+	\label{tab:mat-knn}
+	\begin{tabular}[c]{c|ccc||c}
+		classified as \(\rightarrow\) & \textbf{Low} & \textbf{Medium} & \textbf{High} & Total\\ \hline
+		Low & \textcolor{blue}{1167} & 87 & 5 & 1259 \\
+		Medium & 203 & \textcolor{blue}{287} & 32 & 522 \\
+		High & 23 & 120 & \textcolor{blue}{70} & 213 \\ \hline \hline
+		Total & 1393 & 494 & 107 & 1994 \\
+	\end{tabular}
+\end{table}
+
+The results for Na\"ive Bayes classifier are shown in \fref{tab:mat-nb}.
+\begin{table}[H]
+	\centering
+	\caption{Confusion matrix of the Na\"ive Bayes classifier}
+	\label{tab:mat-nb}
+	\begin{tabular}[c]{c|ccc||c}
+		classified as \(\rightarrow\) & \textbf{Low} & \textbf{Medium} & \textbf{High} & Total\\ \hline
+		Low & \textcolor{blue}{1127} & 120 & 12 & 1259 \\
+		Medium & 189 & \textcolor{blue}{248} & 85 & 522 \\
+		High & 23 & 76 & \textcolor{blue}{114} & 213 \\ \hline \hline
+		Total & 1339 & 444 & 181 & 1994 \\
+	\end{tabular}
+\end{table}
+
+\subsection{Discussion}
