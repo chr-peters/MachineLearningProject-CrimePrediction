@@ -1,0 +1,152 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.bayes.NaiveBayes 
+Relation:     crimepredict-weka.filters.unsupervised.attribute.Remove-R15,17
+Instances:    1994
+Attributes:   16
+              population
+              householdsize
+              racepctblack
+              racePctWhite
+              racePctAsian
+              racePctHisp
+              agePct16t24
+              agePct65up
+              medIncome
+              PctPopUnderPov
+              PctLess9thGrade
+              PctUnemployed
+              TotalPctDiv
+              PctNotSpeakEnglWell
+              PopDens
+              CrimeCategory
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+Naive Bayes Classifier
+
+                        Class
+Attribute                 Low  Medium    High
+                       (0.63)  (0.26)  (0.11)
+==============================================
+population
+  mean                  0.0297  0.0841  0.1664
+  std. dev.             0.0428  0.1515  0.2541
+  weight sum              1259     522     213
+  precision             0.0154  0.0154  0.0154
+
+householdsize
+  mean                  0.4637   0.467  0.4524
+  std. dev.             0.1503  0.1841  0.1858
+  weight sum              1259     522     213
+  precision             0.0109  0.0109  0.0109
+
+racepctblack
+  mean                  0.0814  0.2734  0.5355
+  std. dev.             0.1356  0.2704  0.3262
+  weight sum              1259     522     213
+  precision             0.0101  0.0101  0.0101
+
+racePctWhite
+  mean                  0.8651  0.6199  0.4173
+  std. dev.             0.1429   0.233  0.2653
+  weight sum              1259     522     213
+  precision             0.0102  0.0102  0.0102
+
+racePctAsian
+  mean                  0.1459  0.1701  0.1599
+  std. dev.             0.1913  0.2339  0.2376
+  weight sum              1259     522     213
+  precision             0.0111  0.0111  0.0111
+
+racePctHisp
+  mean                   0.085  0.2517  0.2323
+  std. dev.             0.1457  0.3116  0.2893
+  weight sum              1259     522     213
+  precision             0.0111  0.0111  0.0111
+
+agePct16t24
+  mean                  0.3222  0.3579  0.3643
+  std. dev.             0.1781  0.1446  0.1341
+  weight sum              1259     522     213
+  precision             0.0108  0.0108  0.0108
+
+agePct65up
+  mean                  0.4171  0.4284  0.4448
+  std. dev.             0.1843  0.1708  0.1654
+  weight sum              1259     522     213
+  precision             0.0103  0.0103  0.0103
+
+medIncome
+  mean                  0.4269  0.2637  0.2167
+  std. dev.             0.2193  0.1322  0.1001
+  weight sum              1259     522     213
+  precision             0.0102  0.0102  0.0102
+
+PctPopUnderPov
+  mean                  0.2175  0.4247  0.5198
+  std. dev.             0.1963  0.2036    0.17
+  weight sum              1259     522     213
+  precision             0.0101  0.0101  0.0101
+
+PctLess9thGrade
+  mean                  0.2457  0.4267  0.4583
+  std. dev.             0.1693  0.2363  0.1988
+  weight sum              1259     522     213
+  precision             0.0104  0.0104  0.0104
+
+PctUnemployed
+  mean                  0.2897  0.4666  0.5455
+  std. dev.             0.1615  0.2005  0.1957
+  weight sum              1259     522     213
+  precision             0.0103  0.0103  0.0103
+
+TotalPctDiv
+  mean                  0.4241  0.5903  0.6729
+  std. dev.             0.1698  0.1334   0.135
+  weight sum              1259     522     213
+  precision             0.0108  0.0108  0.0108
+
+PctNotSpeakEnglWell
+  mean                  0.1004  0.2324  0.2563
+  std. dev.             0.1424  0.2832  0.2998
+  weight sum              1259     522     213
+  precision             0.0108  0.0108  0.0108
+
+PopDens
+  mean                   0.201  0.2597  0.3586
+  std. dev.             0.1632  0.2144  0.3021
+  weight sum              1259     522     213
+  precision             0.0105  0.0105  0.0105
+
+
+
+Time taken to build model: 0.05 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances        1489               74.674  %
+Incorrectly Classified Instances       505               25.326  %
+Kappa statistic                          0.4999
+Mean absolute error                      0.1771
+Root mean squared error                  0.3773
+Relative absolute error                 50.9248 %
+Root relative squared error             90.5126 %
+Total Number of Instances             1994     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0,895    0,288    0,842      0,895    0,868      0,623    0,898     0,938     Low
+                 0,475    0,133    0,559      0,475    0,513      0,361    0,803     0,506     Medium
+                 0,535    0,054    0,540      0,535    0,538      0,483    0,907     0,551     High
+Weighted Avg.    0,747    0,223    0,735      0,747    0,740      0,540    0,874     0,783     
+
+=== Confusion Matrix ===
+
+    a    b    c   <-- classified as
+ 1127  120   12 |    a = Low
+  189  248   85 |    b = Medium
+   23   76  114 |    c = High

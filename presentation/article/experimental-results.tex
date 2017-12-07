@@ -93,3 +93,17 @@ An overview of the different evaluation metrics is presented in \fref{fig:result
 \subsection{Discussion}
 Due to the fact that the results do not differ much overall, the efficiency of the different methods is compared. While k-Nearest Neighbor takes the most time by far to reach its conclusion (approximately 30 minutes for a 10-fold cross validation), the Na\"ive Bayes and the decision tree are the fastest classifiers, taking only less than a second. The neural network takes approximately one minute, but delivers the best results. Looking at the confusion matrices, each of the classifiers has its own strength and weaknesses in terms of the different class labels. Based on this observation we look forward to test the majority voting, we hope the results will improve by combining the different approaches. 
 
+\begin{table}[H]
+	\centering
+	\caption{...}
+	\label{...}
+	\resizebox{\columnwidth}{!}{
+	\begin{tabular}[c]{c|cccc}
+		& Manhattan & Na\"ive Bayes & Decision Tree & Neural Network\\ \hline
+		Low & & 0.868 & 0.868 & 0.890 \\
+		Medium & & 0.513 & 0.527 & \textcolor{blue}{0.604} \\
+		High & & \textcolor{blue}{0.538} & 0.433 & 0.517 \\
+	\end{tabular}	
+}
+\end{table}
+
