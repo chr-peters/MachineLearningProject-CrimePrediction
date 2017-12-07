@@ -1,0 +1,97 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.J48 -C 0.01 -M 2
+Relation:     crimepredict-weka.filters.unsupervised.attribute.Remove-R17
+Instances:    1994
+Attributes:   17
+              population
+              householdsize
+              racepctblack
+              racePctWhite
+              racePctAsian
+              racePctHisp
+              agePct16t24
+              agePct65up
+              medIncome
+              PctPopUnderPov
+              PctLess9thGrade
+              PctUnemployed
+              TotalPctDiv
+              PctNotSpeakEnglWell
+              PolicPerPop
+              PopDens
+              CrimeCategory
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+J48 pruned tree
+------------------
+
+racePctWhite <= 0.75
+|   PctPopUnderPov <= 0.17: Low (107.0/23.0)
+|   PctPopUnderPov > 0.17
+|   |   racePctWhite <= 0.34
+|   |   |   TotalPctDiv <= 0.54: Medium (36.0/10.0)
+|   |   |   TotalPctDiv > 0.54
+|   |   |   |   racePctHisp <= 0.11
+|   |   |   |   |   racePctHisp <= 0: High (6.0/1.0)
+|   |   |   |   |   racePctHisp > 0
+|   |   |   |   |   |   racepctblack <= 0.82: Medium (6.0)
+|   |   |   |   |   |   racepctblack > 0.82
+|   |   |   |   |   |   |   population <= 0.3
+|   |   |   |   |   |   |   |   racePctHisp <= 0.02: Medium (48.0/19.0)
+|   |   |   |   |   |   |   |   racePctHisp > 0.02: High (11.0/3.0)
+|   |   |   |   |   |   |   population > 0.3: High (9.0)
+|   |   |   |   racePctHisp > 0.11: High (37.0/1.0)
+|   |   racePctWhite > 0.34
+|   |   |   TotalPctDiv <= 0.68
+|   |   |   |   TotalPctDiv <= 0.34
+|   |   |   |   |   racePctWhite <= 0.57: Medium (5.0/1.0)
+|   |   |   |   |   racePctWhite > 0.57: Low (19.0/2.0)
+|   |   |   |   TotalPctDiv > 0.34
+|   |   |   |   |   medIncome <= 0.09: Low (19.0/8.0)
+|   |   |   |   |   medIncome > 0.09: Medium (324.0/122.0)
+|   |   |   TotalPctDiv > 0.68
+|   |   |   |   racePctWhite <= 0.52
+|   |   |   |   |   PopDens <= 0.09: Medium (6.0/1.0)
+|   |   |   |   |   PopDens > 0.09
+|   |   |   |   |   |   racePctWhite <= 0.39: Medium (6.0/2.0)
+|   |   |   |   |   |   racePctWhite > 0.39: High (29.0/5.0)
+|   |   |   |   racePctWhite > 0.52: Medium (82.0/37.0)
+racePctWhite > 0.75: Low (1244.0/185.0)
+
+Number of Leaves  : 	17
+
+Size of the tree : 	33
+
+
+Time taken to build model: 0.2 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances        1482               74.323  %
+Incorrectly Classified Instances       512               25.677  %
+Kappa statistic                          0.4818
+Mean absolute error                      0.2339
+Root mean squared error                  0.3623
+Relative absolute error                 67.2577 %
+Root relative squared error             86.9031 %
+Total Number of Instances             1994     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0,906    0,313    0,832      0,906    0,868      0,618    0,809     0,814     Low
+                 0,504    0,145    0,553      0,504    0,527      0,370    0,690     0,461     Medium
+                 0,366    0,039    0,531      0,366    0,433      0,387    0,820     0,432     High
+Weighted Avg.    0,743    0,240    0,727      0,743    0,732      0,528    0,779     0,681     
+
+=== Confusion Matrix ===
+
+    a    b    c   <-- classified as
+ 1141  108   10 |    a = Low
+  200  263   59 |    b = Medium
+   30  105   78 |    c = High
+
