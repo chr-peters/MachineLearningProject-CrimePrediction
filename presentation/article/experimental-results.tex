@@ -6,22 +6,31 @@ The different approaches used for the classification purpose and the correspondi
 The first approach we use is the k-Nearest Neighbor classifier. The parameter k is obtained by performing a parameter search on a cross validation. In terms of accuracy k equals 16 was the best choice. To weight the different votes, inverse-distance weighting is employed, the distance measure is Manhattan Metric. 
 
 \subsubsection*{Na\"ive Bayes}
+Another approach is the Na\"ive Bayes classifier. Despite some attributes obviously not being independent, we still employed this classifier because it proved to be useful in other areas as well.  
+
+\subsubsection*{Decision Tree}
+We generated a pruned J48-decision tree. Using sparse parameter search for the confidence factor we discovered that a tree with 33 nodes delivers the best results, in terms of accuracy.
+
+\subsubsection{Neural Network}
 
 \subsection{Results}
 To illustrate the accuracy of the different methods employed, the confusion matrices are presented here. All results are found using 10-fold cross validation.
 
 The results for k-Nearest Neighbor are shown in \fref{tab:mat-knn}.
+
 \begin{table}[H]
 	\centering
 	\caption{Confusion matrix of the k-Nearest Neighbor classifier with Manhattan distance}
 	\label{tab:mat-knn}
+	\resizebox{\columnwidth}{!}{
 	\begin{tabular}[c]{c|ccc||c}
-		classified as \(\rightarrow\) & \textbf{Low} & \textbf{Medium} & \textbf{High} & Total\\ \hline
+		classified \(\rightarrow\) & \textbf{Low} & \textbf{Medium} & \textbf{High} & Total\\ \hline
 		Low & \textcolor{blue}{1167} & 87 & 5 & 1259 \\
 		Medium & 203 & \textcolor{blue}{287} & 32 & 522 \\
 		High & 23 & 120 & \textcolor{blue}{70} & 213 \\ \hline \hline
 		Total & 1393 & 494 & 107 & 1994 \\
 	\end{tabular}
+}
 \end{table}
 
 The results for Na\"ive Bayes classifier are shown in \fref{tab:mat-nb}.
@@ -29,13 +38,39 @@ The results for Na\"ive Bayes classifier are shown in \fref{tab:mat-nb}.
 	\centering
 	\caption{Confusion matrix of the Na\"ive Bayes classifier}
 	\label{tab:mat-nb}
+	\resizebox{\columnwidth}{!}{
 	\begin{tabular}[c]{c|ccc||c}
-		classified as \(\rightarrow\) & \textbf{Low} & \textbf{Medium} & \textbf{High} & Total\\ \hline
+		classified \(\rightarrow\) & \textbf{Low} & \textbf{Medium} & \textbf{High} & Total\\ \hline
 		Low & \textcolor{blue}{1127} & 120 & 12 & 1259 \\
 		Medium & 189 & \textcolor{blue}{248} & 85 & 522 \\
 		High & 23 & 76 & \textcolor{blue}{114} & 213 \\ \hline \hline
 		Total & 1339 & 444 & 181 & 1994 \\
 	\end{tabular}
+}
 \end{table}
+
+The confusion matrix of the decision tree is illustrated in \fref{tab:mat-tree}.
+\begin{table}[H]
+	\centering
+	\caption{Confusion matrix of the decision tree}
+	\label{tab:mat-tree}
+	\resizebox{\columnwidth}{!}{
+	\begin{tabular}[c]{c|ccc||c}
+		classified \(\rightarrow\) & \textbf{Low} & \textbf{Medium} & \textbf{High} & Total\\ \hline
+		Low & \textcolor{blue}{1141} & 208 & 10 & 1259 \\
+		Medium & 200 & \textcolor{blue}{263} & 59 & 522 \\
+		High & 30 & 105 & \textcolor{blue}{78} & 213 \\ \hline \hline
+		Total & 1371 & 476 & 147 & 1994 \\
+	\end{tabular}
+}
+\end{table}
+
+The resulting tree is shown in the figure \fref{fig:tree}
+%\begin{figure}[H]
+%	\centering
+%	%\includegraphics[]{imagefile}
+%	\caption{Layout of the decision tree}
+%	\label{fig:tree}
+%\end{figure}
 
 \subsection{Discussion}
