@@ -1,0 +1,330 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.meta.Vote -S 1 -B "weka.classifiers.lazy.IBk -K 16 -W 0 -I -A \"weka.core.neighboursearch.LinearNNSearch -A \\\"weka.core.ManhattanDistance -R first-last\\\"\"" -B "weka.classifiers.bayes.NaiveBayes " -B "weka.classifiers.trees.J48 -C 0.01 -M 2" -B "weka.classifiers.functions.MultilayerPerceptron -L 0.15 -M 0.075 -N 300 -V 0 -S 0 -E 1 -H 5 -B -C -I" -R MAJ
+Relation:     crimepredict
+Instances:    1994
+Attributes:   16
+              population
+              householdsize
+              racepctblack
+              racePctWhite
+              racePctAsian
+              racePctHisp
+              agePct16t24
+              agePct65up
+              medIncome
+              PctPopUnderPov
+              PctLess9thGrade
+              PctUnemployed
+              TotalPctDiv
+              PctNotSpeakEnglWell
+              PopDens
+              CrimeCategory
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+Vote combines the probability distributions of these base learners:
+	weka.classifiers.lazy.IBk -K 16 -W 0 -I -A "weka.core.neighboursearch.LinearNNSearch -A \"weka.core.ManhattanDistance -R first-last\""
+	weka.classifiers.bayes.NaiveBayes 
+	weka.classifiers.trees.J48 -C 0.01 -M 2
+	weka.classifiers.functions.MultilayerPerceptron -L 0.15 -M 0.075 -N 300 -V 0 -S 0 -E 1 -H 5 -B -C -I
+using the 'Majority Voting' combination rule 
+
+All the models:
+
+IB1 instance-based classifier
+using 16 inverse-distance-weighted nearest neighbour(s) for classification
+
+Naive Bayes Classifier
+
+                        Class
+Attribute                 Low  Medium    High
+                       (0.63)  (0.26)  (0.11)
+==============================================
+population
+  mean                  0.0297  0.0841  0.1664
+  std. dev.             0.0428  0.1515  0.2541
+  weight sum              1259     522     213
+  precision             0.0154  0.0154  0.0154
+
+householdsize
+  mean                  0.4637   0.467  0.4524
+  std. dev.             0.1503  0.1841  0.1858
+  weight sum              1259     522     213
+  precision             0.0109  0.0109  0.0109
+
+racepctblack
+  mean                  0.0814  0.2734  0.5355
+  std. dev.             0.1356  0.2704  0.3262
+  weight sum              1259     522     213
+  precision             0.0101  0.0101  0.0101
+
+racePctWhite
+  mean                  0.8651  0.6199  0.4173
+  std. dev.             0.1429   0.233  0.2653
+  weight sum              1259     522     213
+  precision             0.0102  0.0102  0.0102
+
+racePctAsian
+  mean                  0.1459  0.1701  0.1599
+  std. dev.             0.1913  0.2339  0.2376
+  weight sum              1259     522     213
+  precision             0.0111  0.0111  0.0111
+
+racePctHisp
+  mean                   0.085  0.2517  0.2323
+  std. dev.             0.1457  0.3116  0.2893
+  weight sum              1259     522     213
+  precision             0.0111  0.0111  0.0111
+
+agePct16t24
+  mean                  0.3222  0.3579  0.3643
+  std. dev.             0.1781  0.1446  0.1341
+  weight sum              1259     522     213
+  precision             0.0108  0.0108  0.0108
+
+agePct65up
+  mean                  0.4171  0.4284  0.4448
+  std. dev.             0.1843  0.1708  0.1654
+  weight sum              1259     522     213
+  precision             0.0103  0.0103  0.0103
+
+medIncome
+  mean                  0.4269  0.2637  0.2167
+  std. dev.             0.2193  0.1322  0.1001
+  weight sum              1259     522     213
+  precision             0.0102  0.0102  0.0102
+
+PctPopUnderPov
+  mean                  0.2175  0.4247  0.5198
+  std. dev.             0.1963  0.2036    0.17
+  weight sum              1259     522     213
+  precision             0.0101  0.0101  0.0101
+
+PctLess9thGrade
+  mean                  0.2457  0.4267  0.4583
+  std. dev.             0.1693  0.2363  0.1988
+  weight sum              1259     522     213
+  precision             0.0104  0.0104  0.0104
+
+PctUnemployed
+  mean                  0.2897  0.4666  0.5455
+  std. dev.             0.1615  0.2005  0.1957
+  weight sum              1259     522     213
+  precision             0.0103  0.0103  0.0103
+
+TotalPctDiv
+  mean                  0.4241  0.5903  0.6729
+  std. dev.             0.1698  0.1334   0.135
+  weight sum              1259     522     213
+  precision             0.0108  0.0108  0.0108
+
+PctNotSpeakEnglWell
+  mean                  0.1004  0.2324  0.2563
+  std. dev.             0.1424  0.2832  0.2998
+  weight sum              1259     522     213
+  precision             0.0108  0.0108  0.0108
+
+PopDens
+  mean                   0.201  0.2597  0.3586
+  std. dev.             0.1632  0.2144  0.3021
+  weight sum              1259     522     213
+  precision             0.0105  0.0105  0.0105
+
+
+J48 pruned tree
+------------------
+
+racePctWhite <= 0.75
+|   PctPopUnderPov <= 0.17: Low (107.0/23.0)
+|   PctPopUnderPov > 0.17
+|   |   racePctWhite <= 0.34
+|   |   |   TotalPctDiv <= 0.54: Medium (36.0/10.0)
+|   |   |   TotalPctDiv > 0.54
+|   |   |   |   racePctHisp <= 0.11
+|   |   |   |   |   racePctHisp <= 0: High (6.0/1.0)
+|   |   |   |   |   racePctHisp > 0
+|   |   |   |   |   |   racepctblack <= 0.82: Medium (6.0)
+|   |   |   |   |   |   racepctblack > 0.82
+|   |   |   |   |   |   |   population <= 0.3
+|   |   |   |   |   |   |   |   racePctHisp <= 0.02: Medium (48.0/19.0)
+|   |   |   |   |   |   |   |   racePctHisp > 0.02: High (11.0/3.0)
+|   |   |   |   |   |   |   population > 0.3: High (9.0)
+|   |   |   |   racePctHisp > 0.11: High (37.0/1.0)
+|   |   racePctWhite > 0.34
+|   |   |   TotalPctDiv <= 0.68
+|   |   |   |   TotalPctDiv <= 0.34
+|   |   |   |   |   racePctWhite <= 0.57: Medium (5.0/1.0)
+|   |   |   |   |   racePctWhite > 0.57: Low (19.0/2.0)
+|   |   |   |   TotalPctDiv > 0.34
+|   |   |   |   |   medIncome <= 0.09: Low (19.0/8.0)
+|   |   |   |   |   medIncome > 0.09: Medium (324.0/122.0)
+|   |   |   TotalPctDiv > 0.68
+|   |   |   |   racePctWhite <= 0.52
+|   |   |   |   |   PopDens <= 0.09: Medium (6.0/1.0)
+|   |   |   |   |   PopDens > 0.09
+|   |   |   |   |   |   racePctWhite <= 0.39: Medium (6.0/2.0)
+|   |   |   |   |   |   racePctWhite > 0.39: High (29.0/5.0)
+|   |   |   |   racePctWhite > 0.52: Medium (82.0/37.0)
+racePctWhite > 0.75: Low (1244.0/185.0)
+
+Number of Leaves  : 	17
+
+Size of the tree : 	33
+
+Sigmoid Node 0
+    Inputs    Weights
+    Threshold    -5.112861396958392
+    Node 3    5.260896766204422
+    Node 4    4.393976930033766
+    Node 5    3.1532673489672933
+    Node 6    4.902272602814788
+    Node 7    -0.330994761134549
+Sigmoid Node 1
+    Inputs    Weights
+    Threshold    -3.194299336262926
+    Node 3    -4.449939382436585
+    Node 4    -3.8913205155925517
+    Node 5    3.2177366218825956
+    Node 6    -3.90854680164196
+    Node 7    1.7550345745760485
+Sigmoid Node 2
+    Inputs    Weights
+    Threshold    4.42308771614726
+    Node 3    -2.5839227692878346
+    Node 4    -1.9344163794030917
+    Node 5    -4.698164152499023
+    Node 6    -4.868185859030391
+    Node 7    -1.7823996058965814
+Sigmoid Node 3
+    Inputs    Weights
+    Threshold    1.2583662845883237
+    Attrib population    -0.7968423175098458
+    Attrib householdsize    -2.5456106784639707
+    Attrib racepctblack    -7.735542395515869
+    Attrib racePctWhite    4.701532754773912
+    Attrib racePctAsian    2.9463909289344254
+    Attrib racePctHisp    -2.084062977399122
+    Attrib agePct16t24    0.5268312093008959
+    Attrib agePct65up    -3.6599357122231453
+    Attrib medIncome    -1.4584097799409825
+    Attrib PctPopUnderPov    -3.8529051641755747
+    Attrib PctLess9thGrade    -0.9961672773915351
+    Attrib PctUnemployed    -3.59663986408686
+    Attrib TotalPctDiv    -2.349819257900838
+    Attrib PctNotSpeakEnglWell    4.061940719688387
+    Attrib PopDens    -2.5398341202597394
+Sigmoid Node 4
+    Inputs    Weights
+    Threshold    0.5904619555733766
+    Attrib population    -9.686522889059574
+    Attrib householdsize    3.6154554421839618
+    Attrib racepctblack    -9.130065652201266
+    Attrib racePctWhite    2.2695766395546135
+    Attrib racePctAsian    -4.2300752629354434
+    Attrib racePctHisp    -1.95471682802542
+    Attrib agePct16t24    1.0396197294000298
+    Attrib agePct65up    0.45820900874628856
+    Attrib medIncome    -5.067219903109625
+    Attrib PctPopUnderPov    2.2696883405041857
+    Attrib PctLess9thGrade    -1.321654537287575
+    Attrib PctUnemployed    -1.3996094972161626
+    Attrib TotalPctDiv    -2.0601627447623128
+    Attrib PctNotSpeakEnglWell    -0.5721773961156256
+    Attrib PopDens    0.38663171246508554
+Sigmoid Node 5
+    Inputs    Weights
+    Threshold    6.69578267244671
+    Attrib population    -0.6939855483383652
+    Attrib householdsize    1.2373267318073389
+    Attrib racepctblack    -1.5900042331559605
+    Attrib racePctWhite    2.4054297963559197
+    Attrib racePctAsian    0.32346077854250105
+    Attrib racePctHisp    -0.31509658188862266
+    Attrib agePct16t24    0.30958842213590604
+    Attrib agePct65up    1.5544872294674599
+    Attrib medIncome    4.452435080440124
+    Attrib PctPopUnderPov    -1.9662506574767218
+    Attrib PctLess9thGrade    4.132272358401212
+    Attrib PctUnemployed    1.0813382560951659
+    Attrib TotalPctDiv    -8.200557734420713
+    Attrib PctNotSpeakEnglWell    -4.601074762695169
+    Attrib PopDens    -3.3183539936845614
+Sigmoid Node 6
+    Inputs    Weights
+    Threshold    2.49493119372925
+    Attrib population    -2.327585177045874
+    Attrib householdsize    0.7582792702897057
+    Attrib racepctblack    1.113520274526188
+    Attrib racePctWhite    2.003547260294693
+    Attrib racePctAsian    -3.454025044366396
+    Attrib racePctHisp    -4.963581398649237
+    Attrib agePct16t24    -0.8886885044882961
+    Attrib agePct65up    -2.6288859119173513
+    Attrib medIncome    3.122429643942952
+    Attrib PctPopUnderPov    -10.060186455207027
+    Attrib PctLess9thGrade    0.47026829311427304
+    Attrib PctUnemployed    2.897865017373982
+    Attrib TotalPctDiv    -5.4511933088648705
+    Attrib PctNotSpeakEnglWell    0.23394061490647602
+    Attrib PopDens    0.8637908342750393
+Sigmoid Node 7
+    Inputs    Weights
+    Threshold    5.047980739259735
+    Attrib population    -2.4147427545791453
+    Attrib householdsize    -3.9403629971420684
+    Attrib racepctblack    -6.146994548863988
+    Attrib racePctWhite    4.08396388225931
+    Attrib racePctAsian    1.1125458289185182
+    Attrib racePctHisp    2.2077288294252004
+    Attrib agePct16t24    0.4255378676003742
+    Attrib agePct65up    -3.4336133041523293
+    Attrib medIncome    3.647391830258662
+    Attrib PctPopUnderPov    -2.558238967091109
+    Attrib PctLess9thGrade    3.791828907861729
+    Attrib PctUnemployed    0.008694301529797945
+    Attrib TotalPctDiv    -5.071350190572463
+    Attrib PctNotSpeakEnglWell    -0.7536287375537984
+    Attrib PopDens    -2.2978459457668787
+Class Low
+    Input
+    Node 0
+Class Medium
+    Input
+    Node 1
+Class High
+    Input
+    Node 2
+
+
+
+Time taken to build model: 2.5 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances        1528               76.6299 %
+Incorrectly Classified Instances       466               23.3701 %
+Kappa statistic                          0.531 
+Mean absolute error                      0.1558
+Root mean squared error                  0.3947
+Relative absolute error                 44.801  %
+Root relative squared error             94.6801 %
+Total Number of Instances             1994     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0,916    0,284    0,847      0,916    0,880      0,655    0,816     0,828     Low
+                 0,531    0,132    0,588      0,531    0,558      0,413    0,699     0,435     Medium
+                 0,460    0,035    0,609      0,460    0,524      0,482    0,712     0,338     High
+Weighted Avg.    0,766    0,218    0,753      0,766    0,758      0,573    0,774     0,673     
+
+=== Confusion Matrix ===
+
+    a    b    c   <-- classified as
+ 1153  100    6 |    a = Low
+  188  277   57 |    b = Medium
+   21   94   98 |    c = High
+

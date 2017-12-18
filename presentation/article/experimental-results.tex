@@ -11,8 +11,11 @@ Another approach is the Na\"ive Bayes classifier. Despite some attributes obviou
 \subsubsection*{Decision Tree}
 We generated a pruned J48-decision tree. Using sparse parameter search for the confidence factor, we discovered that a tree with 33 nodes delivers the best results in terms of accuracy.
 
-\subsubsection{Neural Network}
+\subsubsection*{Neural Network}
 A multilayer perceptron is used as a neural network. The structure consists of 15 input neurons (one for each attribute), a hidden layer of five neurons precedes the output layer containing three neurons (one for each class). A learning rate of 0.15 is used, a momentum of 0.075 is applied in each training step. 
+
+\subsubsection*{Ensemble}
+In hope for enhanced results, all models are combined into an ensemble. The vote of the whole ensemble is found by conducting a majority vote. 
 
 \subsection{Results}
 To illustrate the accuracy of the different methods employed, the confusion matrices are presented here. All results are found using 10-fold cross validation.
@@ -82,6 +85,23 @@ The results of the neural network classifier can be found in \fref{tab:mat-nn}.
 	}
 \end{table}
 
+The confusion matrix containing the results of the majority voting is given in \fref{tab:mat-vote}.
+
+\begin{table}[H]
+	\centering
+	\caption{Confusion matrix of the ensemble}
+	\label{tab:mat-vote}
+	\resizebox{\columnwidth}{!}{
+		\begin{tabular}[c]{c|ccc||c}
+			classified \(\rightarrow\) & \textbf{Low} & \textbf{Medium} & \textbf{High} & Total\\ \hline
+			Low & \textcolor{blue}{1153} & 100 & 6 & 1259 \\
+			Medium & 188 & \textcolor{blue}{277} & 57 & 522 \\
+			High & 21 & 94 & \textcolor{blue}{98} & 213 \\ \hline \hline
+			Total & 1362 & 471 & 161 & 1994 \\
+		\end{tabular}
+	}
+\end{table}
+
 An overview of the different evaluation metrics is presented in \fref{fig:result}.
 \begin{figure}[H]
 	\centering
@@ -91,7 +111,7 @@ An overview of the different evaluation metrics is presented in \fref{fig:result
 \end{figure}
 
 \subsection{Discussion}
-Due to the fact that the results do not differ much overall, the efficiency of the different methods is compared. While k-Nearest Neighbors takes the most time by far to reach its conclusion (approximately 30 minutes for a 10-fold cross validation), the Na\"ive Bayes and the decision tree are the fastest classifiers, taking only less than a second. The neural network takes approximately one minute, but delivers the best results. Looking at the confusion matrices, each of the classifiers has its own strength and weaknesses in terms of the different class labels, that can also be seen in \fref{fig:recall}. Based on this observation we look forward to test the majority voting, we hope the results will improve by combining the different approaches. 
+
 
 \begin{figure}[H]
 	\centering
@@ -99,4 +119,5 @@ Due to the fact that the results do not differ much overall, the efficiency of t
 	\caption{Recall of the different classifiers}
 	\label{fig:recall}
 \end{figure}
+
 
