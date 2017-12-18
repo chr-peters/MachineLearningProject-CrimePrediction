@@ -2,8 +2,8 @@
 The different approaches used for the classification purpose and the corresponding results are described in the following sections. 
 \subsection{Approaches and Settings}
 
-\subsubsection*{k-Nearest Neighbor}
-The first approach we use is the k-Nearest Neighbor classifier. The parameter k is obtained by performing a parameter search on a leave-one-out cross validation. In terms of accuracy, k equals 16 was the best choice. To weight the different votes, inverse-distance weighting is employed, the distance measure is Manhattan Metric. 
+\subsubsection*{k-Nearest Neighbors}
+The first approach we use is the k-Nearest Neighbors classifier. The parameter k is obtained by performing a parameter search on a leave-one-out cross validation. In terms of accuracy, k equals 16 was the best choice. To weight the different votes, inverse-distance weighting is employed, the distance measure is Manhattan Metric. 
 
 \subsubsection*{Na\"ive Bayes}
 Another approach is the Na\"ive Bayes classifier. Despite some attributes obviously not being independent, we still employed this classifier because it proved to be useful in other areas as well.  
@@ -15,7 +15,7 @@ We generated a pruned J48-decision tree. Using sparse parameter search for the c
 A multilayer perceptron is used as a neural network. The structure consists of 15 input neurons (one for each attribute), a hidden layer of five neurons precedes the output layer containing three neurons (one for each class). A learning rate of 0.15 is used, a momentum of 0.075 is applied in each training step. 
 
 \subsubsection*{Ensemble}
-In hope for enhanced results, all models are combined into an ensemble. The vote of the whole ensemble is found by conducting a majority vote. 
+In hope for enhanced results by combining the strenghts of the different classifiers, all models are combined into an ensemble. The vote of the whole ensemble is found by conducting a majority voting. 
 
 \subsection{Results}
 To illustrate the accuracy of the different methods employed, the confusion matrices are presented here. All results are found using 10-fold cross validation.
@@ -110,14 +110,18 @@ An overview of the different evaluation metrics is presented in \fref{fig:result
 	\label{fig:result}
 \end{figure}
 
-\subsection{Discussion}
-
-
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\columnwidth]{../../charts/recall.png}
 	\caption{Recall of the different classifiers}
 	\label{fig:recall}
 \end{figure}
+
+\subsection{Discussion}
+
+Considering all the evaluation metrics shown in \fref{fig:result}, the Neural Network delivered the best results in every case. Contrary to the initial believe that the majority voting would enhance the results, it turned out that they were merely average. 
+ 
+To compare our results with those of \cite{indian}, it should be considered that on the one hand they used predefined ranges for their classification and on the other hand they used different attributes, mostly focusing on income and education.
+
 
 
