@@ -1,0 +1,138 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.bayes.NaiveBayes
+Relation:     crimepredict-weka.filters.unsupervised.attribute.Remove-R1-5-weka.filters.unsupervised.attribute.Remove-R1-2,5-12,14-15,17,19-28,31-32,34-41,43-44,46-50,52-61,63-67,69-123
+Instances:    1994
+Attributes:   14
+racepctblack
+racePctWhite
+medIncome
+pctWInvInc
+pctWPubAsst
+PctPopUnderPov
+PctLess9thGrade
+PctUnemployed
+TotalPctDiv
+PctKids2Par
+PctIlleg
+PctNotSpeakEnglWell
+PctPersOwnOccup
+CrimeCategory
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+Naive Bayes Classifier
+
+Class
+Attribute                 Low  Medium    High
+(0.63)  (0.26)  (0.11)
+==============================================
+racepctblack
+mean                  0.0814  0.2734  0.5355
+std. dev.             0.1356  0.2704  0.3262
+weight sum              1259     522     213
+precision             0.0101  0.0101  0.0101
+
+racePctWhite
+mean                  0.8651  0.6199  0.4173
+std. dev.             0.1429   0.233  0.2653
+weight sum              1259     522     213
+precision             0.0102  0.0102  0.0102
+
+medIncome
+mean                  0.4269  0.2637  0.2167
+std. dev.             0.2193  0.1322  0.1001
+weight sum              1259     522     213
+precision             0.0102  0.0102  0.0102
+
+pctWInvInc
+mean                  0.5711  0.3845  0.3231
+std. dev.             0.1584  0.1283  0.1214
+weight sum              1259     522     213
+precision             0.0105  0.0105  0.0105
+
+pctWPubAsst
+mean                  0.2253  0.4452  0.5522
+std. dev.             0.1598  0.2152  0.2279
+weight sum              1259     522     213
+precision               0.01    0.01    0.01
+
+PctPopUnderPov
+mean                  0.2175  0.4247  0.5198
+std. dev.             0.1963  0.2036    0.17
+weight sum              1259     522     213
+precision             0.0101  0.0101  0.0101
+
+PctLess9thGrade
+mean                  0.2457  0.4267  0.4583
+std. dev.             0.1693  0.2363  0.1988
+weight sum              1259     522     213
+precision             0.0104  0.0104  0.0104
+
+PctUnemployed
+mean                  0.2897  0.4666  0.5455
+std. dev.             0.1615  0.2005  0.1957
+weight sum              1259     522     213
+precision             0.0103  0.0103  0.0103
+
+TotalPctDiv
+mean                  0.4241  0.5903  0.6729
+std. dev.             0.1698  0.1334   0.135
+weight sum              1259     522     213
+precision             0.0108  0.0108  0.0108
+
+PctKids2Par
+mean                  0.7223  0.4981  0.3201
+std. dev.             0.1454  0.1496  0.1749
+weight sum              1259     522     213
+precision             0.0104  0.0104  0.0104
+
+PctIlleg
+mean                  0.1401   0.368  0.6142
+std. dev.             0.1118   0.214  0.2622
+weight sum              1259     522     213
+precision             0.0104  0.0104  0.0104
+
+PctNotSpeakEnglWell
+mean                  0.1004  0.2324  0.2563
+std. dev.             0.1424  0.2832  0.2998
+weight sum              1259     522     213
+precision             0.0108  0.0108  0.0108
+
+PctPersOwnOccup
+mean                  0.6352  0.4602  0.3779
+std. dev.             0.1803  0.1402  0.1601
+weight sum              1259     522     213
+precision             0.0101  0.0101  0.0101
+
+
+
+Time taken to build model: 0 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances        1475               73.9719 %
+Incorrectly Classified Instances       519               26.0281 %
+Kappa statistic                          0.5109
+Mean absolute error                      0.179
+Root mean squared error                  0.3858
+Relative absolute error                 51.4727 %
+Root relative squared error             92.5476 %
+Total Number of Instances             1994
+
+=== Detailed Accuracy By Class ===
+
+TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+0,844    0,207    0,875      0,844    0,859      0,630    0,901     0,938     Low
+0,540    0,171    0,529      0,540    0,535      0,367    0,795     0,507     Medium
+0,610    0,065    0,528      0,610    0,566      0,512    0,907     0,566     High
+Weighted Avg.    0,740    0,182    0,747      0,740    0,743      0,549    0,874     0,785
+
+=== Confusion Matrix ===
+
+a    b    c   <-- classified as
+1063  183   13 |    a = Low
+137  282  103 |    b = Medium
+15   68  130 |    c = High

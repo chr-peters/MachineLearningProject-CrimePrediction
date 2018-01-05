@@ -1,0 +1,53 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.lazy.IBk -K 30 -W 0 -X -A "weka.core.neighboursearch.LinearNNSearch -A \"weka.core.EuclideanDistance -R first-last\""
+Relation:     crimepredict-weka.filters.unsupervised.attribute.Remove-R16-weka.filters.unsupervised.attribute.Remove-R1-2,5,7-8,15
+Instances:    1994
+Attributes:   10
+racepctblack
+racePctWhite
+racePctHisp
+medIncome
+PctPopUnderPov
+PctLess9thGrade
+PctUnemployed
+TotalPctDiv
+PctNotSpeakEnglWell
+CrimeCategory
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+IB1 instance-based classifier
+using 15 nearest neighbour(s) for classification
+
+
+Time taken to build model: 0 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances        1527               76.5797 %
+Incorrectly Classified Instances       467               23.4203 %
+Kappa statistic                          0.5292
+Mean absolute error                      0.2063
+Root mean squared error                  0.3283
+Relative absolute error                 59.3087 %
+Root relative squared error             78.747  %
+Total Number of Instances             1994
+
+=== Detailed Accuracy By Class ===
+
+TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+0,911    0,272    0,852      0,911    0,880      0,658    0,913     0,943     Low
+0,586    0,154    0,575      0,586    0,581      0,430    0,822     0,541     Medium
+0,347    0,023    0,643      0,347    0,451      0,430    0,890     0,564     High
+Weighted Avg.    0,766    0,214    0,757      0,766    0,756      0,574    0,887     0,798
+
+=== Confusion Matrix ===
+
+a    b    c   <-- classified as
+1147  106    6 |    a = Low
+181  306   35 |    b = Medium
+19  120   74 |    c = High
+

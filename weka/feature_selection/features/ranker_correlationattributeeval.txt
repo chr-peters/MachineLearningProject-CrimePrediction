@@ -1,0 +1,138 @@
+=== Run information ===
+
+Evaluator:    weka.attributeSelection.CorrelationAttributeEval
+Search:       weka.attributeSelection.Ranker -T -1.7976931348623157E308 -N -1
+Relation:     crimepredict-weka.filters.unsupervised.attribute.Remove-R128-weka.filters.unsupervised.attribute.Remove-R1-5-weka.filters.unsupervised.attribute.RemoveUseless-M99.0-weka.filters.unsupervised.attribute.RemoveUseless-M99.0-weka.filters.unsupervised.attribute.RemoveUseless-M99.0-weka.filters.unsupervised.attribute.RemoveUseless-M99.0-weka.filters.unsupervised.attribute.RemoveUseless-M99.0-weka.filters.unsupervised.attribute.RemoveUseless-M99.0-weka.filters.unsupervised.attribute.RemoveUseless-M99.0-weka.filters.unsupervised.attribute.RemoveUseless-M99.0
+Instances:    1994
+Attributes:   123
+[list of attributes omitted]
+Evaluation mode:    10-fold cross-validation
+
+
+
+=== Attribute selection 10 fold cross-validation (stratified), seed: 1 ===
+
+average merit      average rank  attribute
+0.553 +- 0.004       1   +- 0        45 PctKids2Par
+0.536 +- 0.003       2   +- 0        51 PctIlleg
+0.521 +- 0.005       3.3 +- 0.46     44 PctFam2Par
+0.517 +- 0.004       3.7 +- 0.46      4 racePctWhite
+0.499 +- 0.005       5   +- 0        46 PctYoungKids2Par
+0.483 +- 0.006       6.2 +- 0.4      16 pctWInvInc
+0.475 +- 0.005       7.2 +- 0.75     47 PctTeen2Par
+0.473 +- 0.005       7.6 +- 0.49     18 pctWPubAsst
+0.444 +- 0.004       9.2 +- 0.6      41 FemalePctDiv
+0.434 +- 0.005      11.1 +- 1.22     42 TotalPctDiv
+0.431 +- 0.007      11.2 +- 1.17     29 PctPopUnderPov
+0.431 +- 0.004      11.5 +- 1.2       3 racepctblack
+0.427 +- 0.006      12.6 +- 1.36     68 PctPersOwnOccup
+0.42  +- 0.009      13.8 +- 1.25     78 PctHousNoPhone
+0.414 +- 0.007      15.3 +- 0.78     31 PctNotHSGrad
+0.413 +- 0.005      15.4 +- 0.8      33 PctUnemployed
+0.403 +- 0.005      17.1 +- 0.54     39 MalePctDivorce
+0.395 +- 0.006      17.8 +- 0.4      69 PctPersDenseHous
+0.377 +- 0.006      19.5 +- 0.92     30 PctLess9thGrade
+0.374 +- 0.007      20.1 +- 1.04     74 PctHousOwnOcc
+0.371 +- 0.006      21.1 +- 0.54     20 medFamInc
+0.37  +- 0.006      21.3 +- 0.78     70 PctHousLess3BR
+0.358 +- 0.006      23   +- 0        13 medIncome
+0.33  +- 0.005      24   +- 0        75 PctVacantBoarded
+0.318 +- 0.006      25.1 +- 0.3      63 PctLargHouseFam
+0.307 +- 0.003      26.5 +- 0.81     28 NumUnderPov
+0.306 +- 0.005      26.5 +- 0.5      21 perCapInc
+0.298 +- 0.007      28.2 +- 0.4       6 racePctHisp
+0.29  +- 0.005      30   +- 1.1      79 PctWOFullPlumb
+0.287 +- 0.007      30.6 +- 1.43     38 PctOccupMgmtProf
+0.287 +- 0.004      31.2 +- 1.33     72 HousVacant
+0.286 +- 0.003      31.4 +- 0.92     50 NumIlleg
+0.287 +- 0.009      31.5 +- 2.06     71 MedNumBR
+0.269 +- 0.007      35.2 +- 1.33     32 PctBSorMore
+0.269 +- 0.006      35.4 +- 0.92     34 PctEmploy
+0.269 +- 0.006      35.5 +- 1.02     62 PctNotSpeakEnglWell
+0.258 +- 0.006      38.2 +- 1.99     64 PctLargHouseOccup
+0.259 +- 0.009      39   +- 3.22     87 MedRentPctHousInc
+0.257 +- 0.006      39.2 +- 1.72     37 PctOccupManu
+0.253 +- 0.004      40.7 +- 1.68      1 population
+0.254 +- 0.005      40.7 +- 1.62     73 PctHousOccup
+0.253 +- 0.007      41.3 +- 2.79     67 PersPerRentOccHous
+0.251 +- 0.006      41.8 +- 2.75    121 LemasPctOfficDrugUn
+0.245 +- 0.004      44.4 +- 1.5      23 blackPerCap
+0.244 +- 0.007      44.5 +- 2.11     56 PctImmigRec10
+0.243 +- 0.003      44.8 +- 1.33     11 numbUrban
+0.237 +- 0.007      46.6 +- 2.01     14 pctWWage
+0.23  +- 0.006      48.1 +- 0.7      61 PctSpeakEnglOnly
+0.222 +- 0.006      49.9 +- 1.37     27 HispPerCap
+0.223 +- 0.003      50   +- 1.41     90 NumInShelters
+0.218 +- 0.006      51.7 +- 1.85     83 RentLowQ
+0.216 +- 0.005      52.2 +- 2.04     60 PctRecImmig10
+0.216 +- 0.006      53   +- 1.84     86 MedRent
+0.214 +- 0.006      54.4 +- 1.69     84 RentMedian
+0.209 +- 0.005      56   +- 2.1      59 PctRecImmig8
+0.208 +- 0.006      56.7 +- 2.69     55 PctImmigRec8
+0.208 +- 0.006      56.8 +- 2.09     85 RentHighQ
+0.208 +- 0.004      57.5 +- 1.57     58 PctRecImmig5
+0.207 +- 0.003      57.6 +- 2.46     52 NumImmig
+0.202 +- 0.005      60   +- 1.79     22 whitePerCap
+0.201 +- 0.006      60.2 +- 3.28     40 MalePctNevMarr
+0.198 +- 0.004      61.4 +- 2.11     91 NumStreet
+0.195 +- 0.005      62.5 +- 0.81     57 PctRecentImmig
+0.182 +- 0.007      64.6 +- 1.36     80 OwnOccLowQuart
+0.184 +- 0.006      64.6 +- 0.8      54 PctImmigRec5
+0.175 +- 0.006      65.7 +- 0.78    115 PopDens
+0.166 +- 0.007      67.7 +- 1.27     81 OwnOccMedVal
+0.164 +- 0.005      68.2 +- 0.87     92 PctForeignBorn
+0.162 +- 0.007      68.4 +- 1.43     94 PctSameHouse85
+0.152 +- 0.007      70.7 +- 1.35     82 OwnOccHiQuart
+0.149 +- 0.005      71.8 +- 1.54    114 LandArea
+0.145 +- 0.008      72.4 +- 2.01      8 agePct12t29
+0.144 +- 0.006      72.8 +- 1.17     53 PctImmigRecent
+0.145 +- 0.005      72.9 +- 1.58     49 PctWorkMom
+0.14  +- 0.008      74.5 +- 2.2      25 AsianPerCap
+0.131 +- 0.007      76.6 +- 1.02     43 PersPerFam
+0.13  +- 0.005      76.6 +- 0.92    110 PctPolicMinor
+0.124 +- 0.005      77.9 +- 1.14     26 OtherPerCap
+0.123 +- 0.004      78.3 +- 0.78    107 PctPolicBlack
+0.11  +- 0.005      80.1 +- 0.3     106 PctPolicWhite
+0.101 +- 0.004      81.8 +- 1.17    105 RacialMatchCommPol
+0.098 +- 0.006      83.2 +- 1.54     19 pctWRetire
+0.096 +- 0.006      83.8 +- 1.4      24 indianPerCap
+0.095 +- 0.007      84   +- 1.95     66 PersPerOwnOccHous
+0.095 +- 0.007      84.3 +- 2.15      9 agePct16t24
+0.093 +- 0.003      84.5 +- 1.36    117 PolicCars
+0.082 +- 0.007      88.2 +- 3.06     17 pctWSocSec
+0.081 +- 0.004      88.2 +- 1.47    101 LemasTotalReq
+0.076 +- 0.004      90.6 +- 2.11    111 OfficAssgnDrugUnits
+0.075 +- 0.003      91.2 +- 1.08     97 LemasSwornFT
+0.076 +- 0.006      91.4 +- 3.32    116 PctUsePubTrans
+0.074 +- 0.003      92   +- 1.84    118 PolicOperBudg
+0.072 +- 0.003      93   +- 2.93     15 pctWFarmSelf
+0.071 +- 0.005      93.8 +- 2.79     36 PctEmplProfServ
+0.071 +- 0.004      94.5 +- 2.33    108 PctPolicHisp
+0.068 +- 0.007      94.5 +- 4.13      7 agePct12t21
+0.072 +- 0.003      94.6 +- 1.36     99 LemasSwFTFieldOps
+0.059 +- 0.006      98.7 +- 1.79    102 LemasTotReqPerPop
+0.059 +- 0.004      99.3 +- 0.9      77 MedYrHousBuilt
+0.054 +- 0.006     100.1 +- 2.02     93 PctBornSameState
+0.052 +- 0.007     100.8 +- 2.04     88 MedOwnCostPctInc
+0.047 +- 0.006     102.4 +- 2.5     103 PolicReqPerOffic
+0.044 +- 0.006     103.6 +- 2.2       5 racePctAsian
+0.038 +- 0.003     105.2 +- 1.4      12 pctUrban
+0.039 +- 0.005     105.6 +- 3.41     95 PctSameCity85
+0.036 +- 0.006     107.6 +- 4.45     10 agePct65up
+0.034 +- 0.005     108.4 +- 3.07     48 PctWorkMomYoungKids
+0.033 +- 0.005     109.1 +- 3.73    122 PolicBudgPerPop
+0.03  +- 0.004     110.1 +- 3.3     104 PolicPerPop
+0.031 +- 0.003     110.8 +- 3.22     89 MedOwnCostPctIncNoMtg
+0.031 +- 0.004     110.9 +- 3.7     100 LemasSwFTFieldPerPop
+0.03  +- 0.004     111.1 +- 3.3      98 LemasSwFTPerPop
+0.029 +- 0.006     112.2 +- 3.76    120 LemasGangUnitDeploy
+0.028 +- 0.005     113   +- 3.46    112 NumKindsDrugsSeiz
+0.025 +- 0.006     114.7 +- 4.82    113 PolicAveOTWorked
+0.026 +- 0.005     114.7 +- 2.72     35 PctEmplManu
+0.023 +- 0.007     115.9 +- 3.73     96 PctSameState85
+0.024 +- 0.005     116.3 +- 2.37    109 PctPolicAsian
+0.022 +- 0.006     116.8 +- 3.49    119 LemasPctPolicOnPatr
+0.016 +- 0.003     119.7 +- 1.1      76 PctVacMore6Mos
+0.013 +- 0.003     120.7 +- 1        65 PersPerOccupHous
+0.011 +- 0.004     121.6 +- 0.66      2 householdsize
+

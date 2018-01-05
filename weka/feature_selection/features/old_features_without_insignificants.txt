@@ -1,0 +1,9 @@
+racepctblack
+racePctWhite
+racePctHisp
+medIncome
+PctPopUnderPov
+PctLess9thGrade
+PctUnemployed
+TotalPctDiv
+PctNotSpeakEnglWell

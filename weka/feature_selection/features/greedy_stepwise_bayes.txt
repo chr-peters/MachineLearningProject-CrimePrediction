@@ -1,0 +1,136 @@
+=== Run information ===
+
+Evaluator:    weka.attributeSelection.WrapperSubsetEval -B weka.classifiers.bayes.NaiveBayes -F 5 -T 0.01 -R 1 -E F-MEAS --
+Search:       weka.attributeSelection.GreedyStepwise -T -1.7976931348623157E308 -N -1 -num-slots 1
+Relation:     crimepredict-weka.filters.unsupervised.attribute.Remove-R128-weka.filters.unsupervised.attribute.Remove-R127-weka.filters.unsupervised.attribute.Remove-R4-weka.filters.unsupervised.attribute.Remove-R1-4
+Instances:    1994
+Attributes:   122
+[list of attributes omitted]
+Evaluation mode:    10-fold cross-validation
+
+
+
+=== Attribute selection 10 fold cross-validation (stratified), seed: 1 ===
+
+number of folds (%)  attribute
+0(  0 %)      1 population
+0(  0 %)      2 householdsize
+0(  0 %)      3 racepctblack
+9( 90 %)      4 racePctWhite
+1( 10 %)      5 racePctAsian
+0(  0 %)      6 racePctHisp
+0(  0 %)      7 agePct12t21
+0(  0 %)      8 agePct12t29
+0(  0 %)      9 agePct16t24
+1( 10 %)     10 agePct65up
+0(  0 %)     11 numbUrban
+2( 20 %)     12 pctUrban
+0(  0 %)     13 medIncome
+0(  0 %)     14 pctWWage
+1( 10 %)     15 pctWFarmSelf
+1( 10 %)     16 pctWInvInc
+0(  0 %)     17 pctWSocSec
+0(  0 %)     18 pctWPubAsst
+1( 10 %)     19 pctWRetire
+0(  0 %)     20 medFamInc
+0(  0 %)     21 perCapInc
+0(  0 %)     22 whitePerCap
+0(  0 %)     23 blackPerCap
+0(  0 %)     24 indianPerCap
+0(  0 %)     25 AsianPerCap
+0(  0 %)     26 OtherPerCap
+0(  0 %)     27 HispPerCap
+0(  0 %)     28 NumUnderPov
+0(  0 %)     29 PctPopUnderPov
+2( 20 %)     30 PctLess9thGrade
+0(  0 %)     31 PctNotHSGrad
+0(  0 %)     32 PctBSorMore
+0(  0 %)     33 PctUnemployed
+0(  0 %)     34 PctEmploy
+3( 30 %)     35 PctEmplManu
+0(  0 %)     36 PctEmplProfServ
+0(  0 %)     37 PctOccupManu
+0(  0 %)     38 PctOccupMgmtProf
+2( 20 %)     39 MalePctDivorce
+0(  0 %)     40 MalePctNevMarr
+4( 40 %)     41 FemalePctDiv
+4( 40 %)     42 TotalPctDiv
+1( 10 %)     43 PersPerFam
+0(  0 %)     44 PctFam2Par
+9( 90 %)     45 PctKids2Par
+0(  0 %)     46 PctYoungKids2Par
+0(  0 %)     47 PctTeen2Par
+1( 10 %)     48 PctWorkMomYoungKids
+2( 20 %)     49 PctWorkMom
+0(  0 %)     50 NumIlleg
+2( 20 %)     51 PctIlleg
+0(  0 %)     52 NumImmig
+2( 20 %)     53 PctImmigRecent
+0(  0 %)     54 PctImmigRec5
+1( 10 %)     55 PctImmigRec8
+1( 10 %)     56 PctImmigRec10
+0(  0 %)     57 PctRecentImmig
+0(  0 %)     58 PctRecImmig5
+0(  0 %)     59 PctRecImmig8
+0(  0 %)     60 PctRecImmig10
+0(  0 %)     61 PctSpeakEnglOnly
+0(  0 %)     62 PctNotSpeakEnglWell
+0(  0 %)     63 PctLargHouseFam
+0(  0 %)     64 PctLargHouseOccup
+0(  0 %)     65 PersPerOccupHous
+1( 10 %)     66 PersPerOwnOccHous
+0(  0 %)     67 PersPerRentOccHous
+0(  0 %)     68 PctPersOwnOccup
+3( 30 %)     69 PctPersDenseHous
+2( 20 %)     70 PctHousLess3BR
+0(  0 %)     71 MedNumBR
+0(  0 %)     72 HousVacant
+7( 70 %)     73 PctHousOccup
+0(  0 %)     74 PctHousOwnOcc
+0(  0 %)     75 PctVacantBoarded
+1( 10 %)     76 PctVacMore6Mos
+1( 10 %)     77 MedYrHousBuilt
+0(  0 %)     78 PctHousNoPhone
+0(  0 %)     79 PctWOFullPlumb
+0(  0 %)     80 OwnOccLowQuart
+1( 10 %)     81 OwnOccMedVal
+0(  0 %)     82 OwnOccHiQuart
+1( 10 %)     83 RentLowQ
+0(  0 %)     84 RentMedian
+0(  0 %)     85 RentHighQ
+0(  0 %)     86 MedRent
+0(  0 %)     87 MedRentPctHousInc
+3( 30 %)     88 MedOwnCostPctInc
+0(  0 %)     89 MedOwnCostPctIncNoMtg
+0(  0 %)     90 NumInShelters
+0(  0 %)     91 NumStreet
+0(  0 %)     92 PctForeignBorn
+3( 30 %)     93 PctBornSameState
+0(  0 %)     94 PctSameHouse85
+1( 10 %)     95 PctSameCity85
+0(  0 %)     96 PctSameState85
+0(  0 %)     97 LemasSwornFT
+4( 40 %)     98 LemasSwFTPerPop
+0(  0 %)     99 LemasSwFTFieldOps
+0(  0 %)    100 LemasSwFTFieldPerPop
+0(  0 %)    101 LemasTotalReq
+0(  0 %)    102 LemasTotReqPerPop
+1( 10 %)    103 PolicReqPerOffic
+0(  0 %)    104 PolicPerPop
+1( 10 %)    105 RacialMatchCommPol
+0(  0 %)    106 PctPolicWhite
+0(  0 %)    107 PctPolicBlack
+0(  0 %)    108 PctPolicHisp
+3( 30 %)    109 PctPolicAsian
+0(  0 %)    110 PctPolicMinor
+0(  0 %)    111 OfficAssgnDrugUnits
+1( 10 %)    112 NumKindsDrugsSeiz
+0(  0 %)    113 PolicAveOTWorked
+0(  0 %)    114 LandArea
+0(  0 %)    115 PopDens
+0(  0 %)    116 PctUsePubTrans
+0(  0 %)    117 PolicCars
+0(  0 %)    118 PolicOperBudg
+0(  0 %)    119 LemasPctPolicOnPatr
+3( 30 %)    120 LemasGangUnitDeploy
+0(  0 %)    121 LemasPctOfficDrugUn

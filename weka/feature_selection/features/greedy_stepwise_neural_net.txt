@@ -1,0 +1,69 @@
+=== Run information ===
+
+Evaluator:    weka.attributeSelection.WrapperSubsetEval -B weka.classifiers.functions.MultilayerPerceptron -F 5 -T 0.01 -R 1 -E F-MEAS -IRClass High -- -L 0.3 -M 0.2 -N 500 -V 0 -S 0 -E 20 -H a
+Search:       weka.attributeSelection.GreedyStepwise -T -1.7976931348623157E308 -N -1 -num-slots 1
+Relation:     crimepredict-weka.filters.unsupervised.attribute.Remove-R1-5,128-weka.filters.unsupervised.attribute.Remove-R1-2,5-12,14-15,17,19,22-27,32,34-38,40,43,48-50,52-62,64-67,71-73,76-77,79-122
+Instances:    1994
+Attributes:   28
+racepctblack
+racePctWhite
+medIncome
+pctWInvInc
+pctWPubAsst
+medFamInc
+perCapInc
+NumUnderPov
+PctPopUnderPov
+PctLess9thGrade
+PctNotHSGrad
+PctUnemployed
+MalePctDivorce
+FemalePctDiv
+TotalPctDiv
+PctFam2Par
+PctKids2Par
+PctYoungKids2Par
+PctTeen2Par
+PctIlleg
+PctLargHouseFam
+PctPersOwnOccup
+PctPersDenseHous
+PctHousLess3BR
+PctHousOwnOcc
+PctVacantBoarded
+PctHousNoPhone
+CrimeCategory
+Evaluation mode:    10-fold cross-validation
+
+
+
+=== Attribute selection 10 fold cross-validation (stratified), seed: 1 ===
+
+number of folds (%)  attribute
+1( 10 %)     1 racepctblack
+5( 50 %)     2 racePctWhite
+0(  0 %)     3 medIncome
+2( 20 %)     4 pctWInvInc
+0(  0 %)     5 pctWPubAsst
+0(  0 %)     6 medFamInc
+0(  0 %)     7 perCapInc
+8( 80 %)     8 NumUnderPov
+0(  0 %)     9 PctPopUnderPov
+1( 10 %)    10 PctLess9thGrade
+1( 10 %)    11 PctNotHSGrad
+1( 10 %)    12 PctUnemployed
+1( 10 %)    13 MalePctDivorce
+1( 10 %)    14 FemalePctDiv
+1( 10 %)    15 TotalPctDiv
+2( 20 %)    16 PctFam2Par
+9( 90 %)    17 PctKids2Par
+2( 20 %)    18 PctYoungKids2Par
+0(  0 %)    19 PctTeen2Par
+0(  0 %)    20 PctIlleg
+1( 10 %)    21 PctLargHouseFam
+0(  0 %)    22 PctPersOwnOccup
+1( 10 %)    23 PctPersDenseHous
+1( 10 %)    24 PctHousLess3BR
+0(  0 %)    25 PctHousOwnOcc
+2( 20 %)    26 PctVacantBoarded
+3( 30 %)    27 PctHousNoPhone

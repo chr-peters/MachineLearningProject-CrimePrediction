@@ -1,0 +1,136 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.J48 -C 0.045 -M 2
+Relation:     crimepredict-weka.filters.unsupervised.attribute.Remove-R1-5-weka.filters.unsupervised.attribute.Remove-R1-2,5-12,14-15,17,19-28,31-32,34-41,43-44,46-50,52-61,63-67,69-123
+Instances:    1994
+Attributes:   14
+racepctblack
+racePctWhite
+medIncome
+pctWInvInc
+pctWPubAsst
+PctPopUnderPov
+PctLess9thGrade
+PctUnemployed
+TotalPctDiv
+PctKids2Par
+PctIlleg
+PctNotSpeakEnglWell
+PctPersOwnOccup
+CrimeCategory
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+J48 pruned tree
+------------------
+
+PctIlleg <= 0.21: Low (1190.0/147.0)
+PctIlleg > 0.21
+|   PctKids2Par <= 0.38
+|   |   TotalPctDiv <= 0.7
+|   |   |   TotalPctDiv <= 0.4
+|   |   |   |   PctUnemployed <= 0.53: Low (5.0)
+|   |   |   |   PctUnemployed > 0.53: High (2.0)
+|   |   |   TotalPctDiv > 0.4
+|   |   |   |   medIncome <= 0.06
+|   |   |   |   |   racepctblack <= 0.4: Low (2.0)
+|   |   |   |   |   racepctblack > 0.4: Medium (6.0)
+|   |   |   |   medIncome > 0.06
+|   |   |   |   |   PctNotSpeakEnglWell <= 0.17
+|   |   |   |   |   |   PctNotSpeakEnglWell <= 0.03
+|   |   |   |   |   |   |   PctLess9thGrade <= 0.69
+|   |   |   |   |   |   |   |   PctNotSpeakEnglWell <= 0.02
+|   |   |   |   |   |   |   |   |   pctWInvInc <= 0.26
+|   |   |   |   |   |   |   |   |   |   pctWPubAsst <= 0.65: High (3.0)
+|   |   |   |   |   |   |   |   |   |   pctWPubAsst > 0.65: Medium (3.0)
+|   |   |   |   |   |   |   |   |   pctWInvInc > 0.26
+|   |   |   |   |   |   |   |   |   |   racepctblack <= 0.66: Medium (2.0)
+|   |   |   |   |   |   |   |   |   |   racepctblack > 0.66: Low (4.0/1.0)
+|   |   |   |   |   |   |   |   PctNotSpeakEnglWell > 0.02
+|   |   |   |   |   |   |   |   |   PctPersOwnOccup <= 0.52: High (23.0/8.0)
+|   |   |   |   |   |   |   |   |   PctPersOwnOccup > 0.52: Low (2.0/1.0)
+|   |   |   |   |   |   |   PctLess9thGrade > 0.69
+|   |   |   |   |   |   |   |   PctLess9thGrade <= 0.78: Low (3.0)
+|   |   |   |   |   |   |   |   PctLess9thGrade > 0.78: Medium (2.0)
+|   |   |   |   |   |   PctNotSpeakEnglWell > 0.03
+|   |   |   |   |   |   |   PctPersOwnOccup <= 0.28: Medium (6.0)
+|   |   |   |   |   |   |   PctPersOwnOccup > 0.28
+|   |   |   |   |   |   |   |   racePctWhite <= 0.45: Medium (30.0/10.0)
+|   |   |   |   |   |   |   |   racePctWhite > 0.45
+|   |   |   |   |   |   |   |   |   racePctWhite <= 0.7: High (14.0/3.0)
+|   |   |   |   |   |   |   |   |   racePctWhite > 0.7: Medium (3.0/1.0)
+|   |   |   |   |   PctNotSpeakEnglWell > 0.17
+|   |   |   |   |   |   PctKids2Par <= 0.24: High (14.0)
+|   |   |   |   |   |   PctKids2Par > 0.24
+|   |   |   |   |   |   |   racepctblack <= 0.48
+|   |   |   |   |   |   |   |   pctWPubAsst <= 0.61: Medium (7.0)
+|   |   |   |   |   |   |   |   pctWPubAsst > 0.61: High (3.0/1.0)
+|   |   |   |   |   |   |   racepctblack > 0.48: High (5.0/1.0)
+|   |   TotalPctDiv > 0.7
+|   |   |   PctNotSpeakEnglWell <= 0.05
+|   |   |   |   PctIlleg <= 0.45: Medium (8.0/2.0)
+|   |   |   |   PctIlleg > 0.45
+|   |   |   |   |   PctLess9thGrade <= 0.61
+|   |   |   |   |   |   medIncome <= 0.13: High (11.0)
+|   |   |   |   |   |   medIncome > 0.13
+|   |   |   |   |   |   |   pctWInvInc <= 0.29: Medium (10.0/2.0)
+|   |   |   |   |   |   |   pctWInvInc > 0.29: High (15.0/4.0)
+|   |   |   |   |   PctLess9thGrade > 0.61: Medium (8.0/1.0)
+|   |   |   PctNotSpeakEnglWell > 0.05
+|   |   |   |   racepctblack <= 0.3: Medium (7.0/2.0)
+|   |   |   |   racepctblack > 0.3: High (45.0/3.0)
+|   PctKids2Par > 0.38
+|   |   PctPopUnderPov <= 0.17: Low (52.0/12.0)
+|   |   PctPopUnderPov > 0.17
+|   |   |   racePctWhite <= 0.83
+|   |   |   |   PctPopUnderPov <= 0.24
+|   |   |   |   |   pctWPubAsst <= 0.32
+|   |   |   |   |   |   PctIlleg <= 0.38
+|   |   |   |   |   |   |   pctWInvInc <= 0.57: Low (22.0/5.0)
+|   |   |   |   |   |   |   pctWInvInc > 0.57: Medium (4.0)
+|   |   |   |   |   |   PctIlleg > 0.38: Medium (10.0/1.0)
+|   |   |   |   |   pctWPubAsst > 0.32: Medium (17.0/4.0)
+|   |   |   |   PctPopUnderPov > 0.24: Medium (343.0/122.0)
+|   |   |   racePctWhite > 0.83
+|   |   |   |   PctUnemployed <= 0.65: Low (98.0/26.0)
+|   |   |   |   PctUnemployed > 0.65
+|   |   |   |   |   PctPersOwnOccup <= 0.45: Medium (6.0)
+|   |   |   |   |   PctPersOwnOccup > 0.45
+|   |   |   |   |   |   PctNotSpeakEnglWell <= 0.06: Low (7.0/2.0)
+|   |   |   |   |   |   PctNotSpeakEnglWell > 0.06: Medium (2.0)
+
+Number of Leaves  : 	38
+
+Size of the tree : 	75
+
+
+Time taken to build model: 0.02 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances        1497               75.0752 %
+Incorrectly Classified Instances       497               24.9248 %
+Kappa statistic                          0.5007
+Mean absolute error                      0.2168
+Root mean squared error                  0.3642
+Relative absolute error                 62.3514 %
+Root relative squared error             87.3501 %
+Total Number of Instances             1994
+
+=== Detailed Accuracy By Class ===
+
+TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+0,902    0,295    0,839      0,902    0,869      0,626    0,845     0,860     Low
+0,531    0,147    0,562      0,531    0,546      0,391    0,716     0,460     Medium
+0,399    0,036    0,570      0,399    0,470      0,427    0,799     0,430     High
+Weighted Avg.    0,751    0,229    0,738      0,751    0,742      0,543    0,806     0,709
+
+=== Confusion Matrix ===
+
+a    b    c   <-- classified as
+1135  111   13 |    a = Low
+194  277   51 |    b = Medium
+23  105   85 |    c = High
+

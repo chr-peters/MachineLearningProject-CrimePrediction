@@ -1,0 +1,15 @@
+population
+householdsize
+racepctblack
+racePctWhite
+racePctAsian
+racePctHisp
+agePct16t24
+agePct65up
+medIncome
+PctPopUnderPov
+PctLess9thGrade
+PctUnemployed
+TotalPctDiv
+PctNotSpeakEnglWell
+PopDens
