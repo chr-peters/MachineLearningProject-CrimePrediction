@@ -1,0 +1,60 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.meta.Vote -S 1 -B "weka.classifiers.bayes.NaiveBayes " -B "weka.classifiers.lazy.IBk -K 30 -W 0 -A \"weka.core.neighboursearch.LinearNNSearch -A \\\"weka.core.EuclideanDistance -R first-last\\\"\"" -B "weka.classifiers.trees.J48 -C 0.045 -M 2" -B "weka.classifiers.functions.MultilayerPerceptron -L 0.1 -M 0.1 -N 300 -V 0 -S 0 -E 1 -H 17 -B -C -I" -R MAJ -do-not-print
+Relation:     crimepredict-weka.filters.unsupervised.attribute.Remove-R1-5-weka.filters.unsupervised.attribute.Remove-R1-2,5-12,14-15,17,19-28,31-32,34-41,43-44,46-50,52-61,63-67,69-123
+Instances:    1994
+Attributes:   14
+racepctblack
+racePctWhite
+medIncome
+pctWInvInc
+pctWPubAsst
+PctPopUnderPov
+PctLess9thGrade
+PctUnemployed
+TotalPctDiv
+PctKids2Par
+PctIlleg
+PctNotSpeakEnglWell
+PctPersOwnOccup
+CrimeCategory
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+Vote combines the probability distributions of these base learners:
+weka.classifiers.bayes.NaiveBayes
+weka.classifiers.lazy.IBk -K 30 -W 0 -A "weka.core.neighboursearch.LinearNNSearch -A \"weka.core.EuclideanDistance -R first-last\""
+weka.classifiers.trees.J48 -C 0.045 -M 2
+weka.classifiers.functions.MultilayerPerceptron -L 0.1 -M 0.1 -N 300 -V 0 -S 0 -E 1 -H 17 -B -C -I
+using the 'Majority Voting' combination rule
+
+
+Time taken to build model: 2.51 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances        1533               76.8806 %
+Incorrectly Classified Instances       461               23.1194 %
+Kappa statistic                          0.5469
+Mean absolute error                      0.1541
+Root mean squared error                  0.3926
+Relative absolute error                 44.3203 %
+Root relative squared error             94.1708 %
+Total Number of Instances             1994
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+ 		 0,894    0,238    0,865      0,894    0,879      0,664    0,828     0,840     Low
+		 0,584    0,150    0,580      0,584    0,582      0,433    0,717     0,448     Medium
+		 0,484    0,036    0,613      0,484    0,541      0,497    0,724     0,352     High
+Weighted Avg.    0,769    0,194    0,764      0,769    0,765      0,586    0,788     0,685
+
+=== Confusion Matrix ===
+
+a    b    c   <-- classified as
+1125  126    8 |    a = Low
+160   305   57 |    b = Medium
+15     95  103 |    c = High
