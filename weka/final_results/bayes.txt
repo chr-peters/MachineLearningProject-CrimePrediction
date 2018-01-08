@@ -124,15 +124,15 @@ Total Number of Instances             1994
 
 === Detailed Accuracy By Class ===
 
-TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
-0,844    0,207    0,875      0,844    0,859      0,630    0,901     0,938     Low
-0,540    0,171    0,529      0,540    0,535      0,367    0,795     0,507     Medium
-0,610    0,065    0,528      0,610    0,566      0,512    0,907     0,566     High
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+		 0,844    0,207    0,875      0,844    0,859      0,630    0,901     0,938     Low
+		 0,540    0,171    0,529      0,540    0,535      0,367    0,795     0,507     Medium
+		 0,610    0,065    0,528      0,610    0,566      0,512    0,907     0,566     High
 Weighted Avg.    0,740    0,182    0,747      0,740    0,743      0,549    0,874     0,785
 
 === Confusion Matrix ===
 
 a    b    c   <-- classified as
 1063  183   13 |    a = Low
-137  282  103 |    b = Medium
-15   68  130 |    c = High
+137   282  103 |    b = Medium
+15     68  130 |    c = High
