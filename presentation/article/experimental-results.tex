@@ -3,22 +3,41 @@ The different approaches used for the classification purpose and the correspondi
 \subsection{Approaches and Settings}
 
 \subsubsection*{k-Nearest Neighbors}
-The first approach we use is the k-Nearest Neighbors classifier. The parameter k is obtained by performing a parameter search on a leave-one-out cross validation. In terms of accuracy, k equals 16 was the best choice. To weight the different votes, inverse-distance weighting is employed, the distance measure is Manhattan Metric. 
+The first approach we use is the k-Nearest Neighbors classifier. The
+parameter k is obtained by performing a parameter search on a
+leave-one-out cross validation. In terms of accuracy, \(k=30\) was
+the best choice. The distance measure is euclidean distance, the best
+results were obtained without distance weighting.
 
 \subsubsection*{Na\"ive Bayes}
-Another approach is the Na\"ive Bayes classifier. Despite some attributes obviously not being independent, we still employed this classifier because it proved to be useful in other areas as well.  
+Another approach is the Na\"ive Bayes classifier. Despite some
+attributes obviously not being independent, we still employed this
+classifier because it proved to be useful in other areas as well.
 
 \subsubsection*{Decision Tree}
-We generated a pruned J48-decision tree. Using sparse parameter search for the confidence factor, we discovered that a tree with 33 nodes delivers the best results in terms of accuracy.
+We generated a pruned J48-decision tree. The best results were
+achieved by using a confidence factor of \(c=0.045\) for pruning the
+tree. This value was found by utilizing WEKAs capabilities of linear
+parameter search.
 
 \subsubsection*{Neural Network}
-A multilayer perceptron is used as a neural network. The structure consists of 15 input neurons (one for each attribute), a hidden layer of five neurons precedes the output layer containing three neurons (one for each class). A learning rate of 0.15 is used, a momentum of 0.075 is applied in each training step. 
+A multilayer perceptron is used as a neural network. The structure
+consists of 13 input neurons (one for each feature), a hidden layer
+of 17 neurons precedes the output layer containing three neurons
+(one for each class). A learning rate of \(\alpha=0.1\) is used, a momentum of
+\(m=0.1\) is applied in each training step. The number of hidden
+neurons was found by conducting a linear search once again, testing
+all possible values between zero and 30.
 
 \subsubsection*{Ensemble}
-In hope for enhanced results by combining the strenghts of the different classifiers, all models are combined into an ensemble. The vote of the whole ensemble is found by conducting a majority voting. 
+In hope for enhanced results by combining the strenghts of the
+different classifiers, all models are combined into an ensemble. The
+vote of the whole ensemble is found by conducting a majority voting.
 
 \subsection{Results}
-To illustrate the accuracy of the different methods employed, the confusion matrices are presented here. All results are found using 10-fold cross validation.
+To illustrate the accuracy of the different methods employed, the
+confusion matrices are presented here. All results are found using
+10-fold cross validation.
 
 The results of k-Nearest Neighbors are shown in \ref{tab:mat-knn}.
 
