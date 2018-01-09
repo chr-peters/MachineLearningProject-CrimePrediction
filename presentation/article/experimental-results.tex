@@ -3,16 +3,16 @@ The different approaches used for the classification purpose and the correspondi
 \subsection{Approaches and Settings}
 
 \subsubsection*{k-Nearest Neighbors}
-The first approach we use is the k-Nearest Neighbors classifier. The
-parameter k is obtained by performing a parameter search on a
+The first classifier we chose is the k-Nearest Neighbors classifier. The
+parameter k was obtained by performing a parameter search on a
 leave-one-out cross validation. In terms of accuracy, \(k=30\) was
 the best choice. The distance measure is euclidean distance, the best
 results were obtained without distance weighting.
 
 \subsubsection*{Na\"ive Bayes}
 Another approach is the Na\"ive Bayes classifier. Despite some
-attributes obviously not being independent, we still employed this
-classifier because it proved to be useful in other areas as well.
+attributes obviously not being independent, it was still employed
+because it proved to be useful in other areas as well.
 
 \subsubsection*{Decision Tree}
 We generated a pruned J48-decision tree. The best results were
@@ -35,78 +35,22 @@ different classifiers, all models are combined into an ensemble. The
 vote of the whole ensemble is found by conducting a majority voting.
 
 \subsection{Results}
-To illustrate the accuracy of the different methods employed, the
-confusion matrices are presented here. All results are found using
-10-fold cross validation.
+Each classifier as well as the ensemble was evaluated by using 10-fold
+cross validation.
+As a result, a comparison of the different evaluation metrics can
+be found in \fref{fig:result}.
 
-The results of k-Nearest Neighbors are shown in \ref{tab:mat-knn}.
-
-\begin{table}[H]
+\begin{figure}[h]
 	\centering
-	\caption{Confusion matrix of the k-Nearest Neighbors classifier with Manhattan distance}
-	\label{tab:mat-knn}
-	\resizebox{\columnwidth}{!}{
-	\begin{tabular}[c]{c|ccc||c}
-		classified \(\rightarrow\) & \textbf{Low} & \textbf{Medium} & \textbf{High} & Total\\ \hline
-		Low & \textcolor{blue}{1155} & 101 & 3 & 1259 \\
-		Medium & 181 & \textcolor{blue}{304} & 37 & 522 \\
-		High & 21 & 112 & \textcolor{blue}{80} & 213 \\ \hline \hline
-		Total & 1357 & 517 & 120 & 1994 \\
-	\end{tabular}
-}
-\end{table}
+	\includegraphics[width=\columnwidth]{../../charts/results.png}
+	\caption{Evaluation metrics of the different classifiers}
+	\label{fig:result}
+\end{figure}
 
-The results of the Na\"ive Bayes classifier are shown in \fref{tab:mat-nb}.
-\begin{table}[H]
-	\centering
-	\caption{Confusion matrix of the Na\"ive Bayes classifier}
-	\label{tab:mat-nb}
-	\resizebox{\columnwidth}{!}{
-	\begin{tabular}[c]{c|ccc||c}
-		classified \(\rightarrow\) & \textbf{Low} & \textbf{Medium} & \textbf{High} & Total\\ \hline
-		Low & \textcolor{blue}{1063} & 183 & 13 & 1259 \\
-		Medium & 137 & \textcolor{blue}{282} & 103 & 522 \\
-		High & 15 & 68 & \textcolor{blue}{130} & 213 \\ \hline \hline
-		Total & 1215 & 533 & 246 & 1994 \\
-	\end{tabular}
-}
-\end{table}
+\noindent The detailed results of the ensemble learner are illustrated in a
+confusion matrix in \fref{tab:mat-vote}.
 
-The confusion matrix of the decision tree is illustrated in \fref{tab:mat-tree}.
-\begin{table}[H]
-	\centering
-	\caption{Confusion matrix of the decision tree}
-	\label{tab:mat-tree}
-	\resizebox{\columnwidth}{!}{
-	\begin{tabular}[c]{c|ccc||c}
-		classified \(\rightarrow\) & \textbf{Low} & \textbf{Medium} & \textbf{High} & Total\\ \hline
-		Low & \textcolor{blue}{1135} & 111 & 13 & 1259 \\
-		Medium & 194 & \textcolor{blue}{277} & 51 & 522 \\
-		High & 23 & 105 & \textcolor{blue}{85} & 213 \\ \hline \hline
-		Total & 1352 & 493 & 149 & 1994 \\
-	\end{tabular}
-}
-\end{table}
-
-The results of the neural network classifier can be found in \fref{tab:mat-nn}.
-\begin{table}[H]
-	\centering
-	\caption{Confusion matrix of the Neural Network}
-	\label{tab:mat-nn}
-	\resizebox{\columnwidth}{!}{
-		\begin{tabular}[c]{c|ccc||c}
-			classified \(\rightarrow\) & \textbf{Low} & \textbf{Medium} & \textbf{High} & Total\\ \hline
-			Low & \textcolor{blue}{1128} & 128 & 3 & 1259 \\
-			Medium & 168 & \textcolor{blue}{317} & 37 & 522 \\
-			High & 12 & 108 & \textcolor{blue}{93} & 213 \\ \hline \hline
-			Total & 1308 & 553 & 133 & 1994 \\
-		\end{tabular}
-	}
-\end{table}
-
-The confusion matrix containing the results of the majority voting is given in \fref{tab:mat-vote}.
-
-\begin{table}[H]
+\begin{table}[h]
 	\centering
 	\caption{Confusion matrix of the ensemble}
 	\label{tab:mat-vote}
@@ -121,20 +65,80 @@ The confusion matrix containing the results of the majority voting is given in \
 	}
 \end{table}
 
-An overview of the different evaluation metrics is presented in \fref{fig:result}.
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=\columnwidth]{../../charts/results.png}
-	\caption{Evaluation metrics of the different classifiers}
-	\label{fig:result}
-\end{figure}
+\noindent The recall of the classifiers with respect to each of the classes is given in
+\fref{fig:recall}.
 
-\begin{figure}[H]
+\begin{figure}[h]
 	\centering
 	\includegraphics[width=\columnwidth]{../../charts/recall.png}
 	\caption{Recall of the different classifiers}
 	\label{fig:recall}
 \end{figure}
+
+%% The results of k-Nearest Neighbors are shown in \ref{tab:mat-knn}.
+
+%% \begin{table}[H]
+%% 	\centering
+%% 	\caption{Confusion matrix of the k-Nearest Neighbors classifier with Manhattan distance}
+%% 	\label{tab:mat-knn}
+%% 	\resizebox{\columnwidth}{!}{
+%% 	\begin{tabular}[c]{c|ccc||c}
+%% 		classified \(\rightarrow\) & \textbf{Low} & \textbf{Medium} & \textbf{High} & Total\\ \hline
+%% 		Low & \textcolor{blue}{1155} & 101 & 3 & 1259 \\
+%% 		Medium & 181 & \textcolor{blue}{304} & 37 & 522 \\
+%% 		High & 21 & 112 & \textcolor{blue}{80} & 213 \\ \hline \hline
+%% 		Total & 1357 & 517 & 120 & 1994 \\
+%% 	\end{tabular}
+%% }
+%% \end{table}
+
+%% The results of the Na\"ive Bayes classifier are shown in \fref{tab:mat-nb}.
+%% \begin{table}[H]
+%% 	\centering
+%% 	\caption{Confusion matrix of the Na\"ive Bayes classifier}
+%% 	\label{tab:mat-nb}
+%% 	\resizebox{\columnwidth}{!}{
+%% 	\begin{tabular}[c]{c|ccc||c}
+%% 		classified \(\rightarrow\) & \textbf{Low} & \textbf{Medium} & \textbf{High} & Total\\ \hline
+%% 		Low & \textcolor{blue}{1063} & 183 & 13 & 1259 \\
+%% 		Medium & 137 & \textcolor{blue}{282} & 103 & 522 \\
+%% 		High & 15 & 68 & \textcolor{blue}{130} & 213 \\ \hline \hline
+%% 		Total & 1215 & 533 & 246 & 1994 \\
+%% 	\end{tabular}
+%% }
+%% \end{table}
+
+%% The confusion matrix of the decision tree is illustrated in \fref{tab:mat-tree}.
+%% \begin{table}[H]
+%% 	\centering
+%% 	\caption{Confusion matrix of the decision tree}
+%% 	\label{tab:mat-tree}
+%% 	\resizebox{\columnwidth}{!}{
+%% 	\begin{tabular}[c]{c|ccc||c}
+%% 		classified \(\rightarrow\) & \textbf{Low} & \textbf{Medium} & \textbf{High} & Total\\ \hline
+%% 		Low & \textcolor{blue}{1135} & 111 & 13 & 1259 \\
+%% 		Medium & 194 & \textcolor{blue}{277} & 51 & 522 \\
+%% 		High & 23 & 105 & \textcolor{blue}{85} & 213 \\ \hline \hline
+%% 		Total & 1352 & 493 & 149 & 1994 \\
+%% 	\end{tabular}
+%% }
+%% \end{table}
+
+%% The results of the neural network classifier can be found in \fref{tab:mat-nn}.
+%% \begin{table}[H]
+%% 	\centering
+%% 	\caption{Confusion matrix of the Neural Network}
+%% 	\label{tab:mat-nn}
+%% 	\resizebox{\columnwidth}{!}{
+%% 		\begin{tabular}[c]{c|ccc||c}
+%% 			classified \(\rightarrow\) & \textbf{Low} & \textbf{Medium} & \textbf{High} & Total\\ \hline
+%% 			Low & \textcolor{blue}{1128} & 128 & 3 & 1259 \\
+%% 			Medium & 168 & \textcolor{blue}{317} & 37 & 522 \\
+%% 			High & 12 & 108 & \textcolor{blue}{93} & 213 \\ \hline \hline
+%% 			Total & 1308 & 553 & 133 & 1994 \\
+%% 		\end{tabular}
+%% 	}
+%% \end{table}
 
 \subsection{Discussion}
 
