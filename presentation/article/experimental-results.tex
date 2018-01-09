@@ -1,5 +1,6 @@
 \section{Experimental Results}
-The different approaches used for the classification purpose and the corresponding results are described in the following sections. 
+The different approaches used for the classification purpose and the corresponding results are described in the following sections.
+
 \subsection{Approaches and Settings}
 
 \subsubsection*{k-Nearest Neighbors}
@@ -140,11 +141,38 @@ confusion matrix in \fref{tab:mat-vote}.
 %% 	}
 %% \end{table}
 
-\subsection{Discussion}
+\subsection{Discussion and Outlook}
 
-Considering all the evaluation metrics shown in \fref{fig:result}, the Neural Network delivered the best results in every case. Contrary to the initial believe that the majority voting would enhance the results, it turned out that they were merely average. 
- 
-To compare our results with those of \cite{indian}, it should be considered that on the one hand they used predefined ranges for their classification and on the other hand they used different attributes, mostly focusing on income and education.
+As shown in figures \ref{fig:result} and \ref{fig:recall}, each of the
+classifiers does indeed have its own strengths and weaknesses.
+While k-Nearest Neighbors excels in terms of accuracy and overall
+recall, the Neural Network performs best in terms of precision and
+f-measure. A fairly interesting observation can be made when looking
+at the different recall values with respect to the class "High":
+Here, the Na\"ive Bayesian classifier achieves by far the most impressive
+results when compared to the other models. This turns out to be a
+contrast to the overall results of this classifier, which are merely average.
 
+Contrary to our initial believe, that the combination of all
+classifiers into an ensemble would enhance the results, we have to
+admit, that this was not quite the case. Overall, the ensemble always
+ranks among the best, but it never reached top spot in any
+category. In fact it turned out to be worse than the Neural Network in
+every category except for the recall with respect to the class "High".
 
+This seemingly paradox incidence can be explained when
+thinking about the effects of combining different classifiers: When
+merging the different models, not only the strengths are combined but
+also the weaknesses. This results in the observed pattern: By
+combining the classifiers, the strengths and weaknesses average out,
+thus the obtained results are also average.
 
+It should be noted however, that there are methods to bias the results
+of the ensemble more towards the stronger side of the spectrum.
+By giving each of the voters a different weight, one could emphasize the
+strengths of one classifier and neglect the weaknesses of
+another.
+
+\noindent Nevertheless, developing such a method to intelligently balance the weights of an
+ensemble would most likely require further study, which
+could form the basis of another research project.
