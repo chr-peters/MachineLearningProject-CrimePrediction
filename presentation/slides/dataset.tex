@@ -1,0 +1,49 @@
+\mode*
+
+\begin{frame}
+	\section{Dataset}
+	\frametitle{Dataset}
+\end{frame}
+
+
+This research is based on real crime data which can be obtained from the Machine Learning
+Repository\footnote{http://archive.ics.uci.edu/ml/datasets/Communities+and+Crime}. The
+dataset contains 1994 instances. The whole set consists of a union of
+three subsets, namely the 1990 US Census, law enforcement data from
+the 1990 US LEMAS survey and crime data from the 1995 FBI UCR.
+
+From the 128 attributes the dataset provides, only the most
+significant features are chosen.
+The exact procedure that lead to this subset of features is
+described in a more detailed manner in \fref{sec:feature_selection}.
+All chosen attributes (except, of course, for the class label)
+are continuous and normalized, no attribute has any missing
+values.
+A list of the attributes that will be used for classification is
+presented here:
+\begin{itemize}
+	\setlength{\itemsep}{-2pt}
+	\item percentage of population that is african american
+	\item percentage of population that is caucasian
+	\item median household income
+	\item percentage of households with investment / rent income in 1989
+	\item percentage of households with public assistance income in 1989
+	\item percentage of people under the poverty level
+	\item percentage of people 25 and over with less than a 9th grade education
+	\item percentage of people 16 and over, in the labor force, and unemployed
+	\item percentage of population who are divorced
+	\item percentage of kids in family housing with two parents
+	\item percentage of kids born to never married
+	\item percentage of people who do not speak English well
+	\item percentage of people in owner occupied households
+	\item crime category (the class to be predicted, eigher "High", "Medium" or "Low")
+\end{itemize}
+
+\noindent It should be noted that the class attribute "crime category" is an \textit{artificial}\footnote{this attribute is added by us}
+attribute, which is based on the attribute "total number of violent
+crimes per 100K population". This attribute, which is continuous in
+nature and therefore does not lend itself for classification, is
+essentially grouped into three classes ("High", "Medium" or "Low")
+based on its value. The details of this approach are outlined in \fref{sec:assignment}.
+
+\mode<all>

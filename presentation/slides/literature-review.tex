@@ -1,0 +1,41 @@
+\mode*
+\begin{frame}
+	\section{Literature Review}
+	\frametitle{Literature Review}
+\end{frame}
+
+A similar approach to ours was already developed by the authors of
+\cite{indian} who employed "WEKA" for predicting the crime category
+using the same data as well. In order to do this, they selected a
+different set of features which is omitted here for the sake of saving
+space. Their method of selection as well as the assignment of the
+class labels "High", "Medium" and "Low" to each instance in the
+dataset is -- countrary to our approach -- solely based on subjective
+choice.
+
+In order to perform the classification task, they chose two
+classifiers, namely a Na\"ive Bayesian and a decision tree. They did
+however use the same evaluation metrics as used in this paper, which
+allows for comparison of the different approaches.\\
+
+
+\noindent In contrast to those ways of predicting crime there is a
+different approach illustrated in \cite{forecast}. In order to predict
+crime in the future they analyzed a dataset which contains the
+following attributes:
+\begin{itemize}
+	\setlength{\itemsep}{-2pt}
+	\item Time
+	\item Day
+	\item Month
+	\item Weather
+	\item Location(geographical coordinates) 
+\end{itemize}
+The records in the dataset are geographically mapped onto the certain
+regions of the United States of America. Using their own
+implementation of a cluster analysis they detect hot-spots of crime
+according to the given features. Afterwards an artificial neural
+network tries to forecast crime activity in the future.
+
+
+\mode<all>

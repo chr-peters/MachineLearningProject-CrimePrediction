@@ -1,0 +1,35 @@
+%===============================================
+% Dokumentenkopf
+%===============================================
+\RequirePackage{ifluatex}		% Für Compilerunterscheidung
+\RequirePackage{xcolor}			% wegen Farbmischung
+\documentclass[ngerman, ignorenonframetext]{beamer}	
+\usetheme{ACUAS}				% CD der FH-Aachen
+\input{../common/config} 		% Einstellungen und Pakete
+\addbibresource{../common/literatur.bib}	% Ort der Literaturdatenbank
+
+%===============================================
+% Dokumentenrumpf
+%===============================================
+\begin{document}
+	\mode<all>
+	\begin{frame}
+	\maketitle					% ist in config 
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Table of Contents}
+		\tableofcontents		% Inhaltsverzeichnis
+	\end{frame}	
+	\include{einleitung}
+	\include{dataset}
+	\include{literature-review}
+	\include{preparation}
+	%\include{clustering}
+	\include{experimental-results}
+	\begin{frame}[allowframebreaks] % Folien dürfen sich umbrechen
+			\nocite{*}
+			\printbibliography	% Literaturverzeichnis
+	\end{frame}
+	\mode*
+\end{document}
