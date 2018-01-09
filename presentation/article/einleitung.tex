@@ -1,17 +1,25 @@
 \section{Introduction}
 
-In a time of limited resources regarding fighting crimes, we aim to predict the crime category of different
-cities to provide additional guidance when distributing those resources.
+In a time of limited assets regarding fighting crimes,
+we aim to provide additional guidance to
+those distributing the resources by training machine learning
+classifiers to predict the criminal category of different cities.
 
-To emphasize the influence of certain factors on the criminal rates of cities, we use different
-classifiers to predict the criminal category (i.e. high, medium and low) the city falls into. The classifiers
-employed are namely k-Nearest Neighbors, Decision Tree, Na\"ive Bayes Classifier and Neural Network.
-After training each classifier on its own, the obtained models are combined into an ensemble, the decision of
-which is based on a majority vote. This is done to achieve even better results.
+After selecting the features of a city that have the most striking
+influence on its criminal category (i.e. high crime rate, medium crime
+rate or low crime rate), the classifiers are trained to learn the
+complex relations between these characteristics and the corresponding
+category. The different classifiers used for this task are
+namely k-Nearest Neighbors, Na\"ive Bayes, a Decision Tree and a
+Neural Network.
 
-In order to evaluate the results, we use the common evaluation metrics e.g accuracy, recall, precision and
-f-measure.
+Each classifier is first trained on its own, the obtained models are
+then combined into an ensemble to merge the individual
+strengths of each classifier. The decision of the ensemble is found by
+conducting a majority voting.
+The metrics accuracy, precision, recall and f-measure are
+used to evaluate the results.
 
-In the course of this research the open source data mining software WEKA is used to apply the algorithms to
-the dataset.
-\vspace*{\fill}
+In the course of this research the open source data mining software
+WEKA is utilized to apply the algorithms to the dataset.
+
