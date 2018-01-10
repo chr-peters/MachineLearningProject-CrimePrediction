@@ -1,7 +1,26 @@
 \mode*
 \begin{frame}
-	\section{Literature Review}
-	\frametitle{Literature Review}
+  \section{Literature Review}
+  \frametitle{Literature Review}
+  \begin{itemize}
+    \item The authors of \cite{indian} developed a similar approach
+      \begin{itemize}
+        \item Same dataset
+        \item Only Na\"ive Bayes and Decision Tree
+        \item Feature selection based on subjective choice
+        \item No details disclosed regarding their method of assigning the
+          class labels
+      \end{itemize}
+    \item A different approach is illustrated in \cite{forecast}
+      \begin{itemize}
+        \item Goal: predict crime hotspots in the US
+        \item They first mapped unique crime records to the
+          corresponding locations of the US using geographical coordinates
+        \item Their next step was to find clusters
+        \item The prediction of crime activity within the clusters was
+          performed by an artificial neural network
+      \end{itemize}
+  \end{itemize}
 \end{frame}
 
 A similar approach to ours was already developed by the authors of
