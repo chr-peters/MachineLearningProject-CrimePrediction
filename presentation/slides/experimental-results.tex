@@ -2,150 +2,140 @@
 \begin{frame}
  	\section{Experimental Results}
  	\frametitle{Experimental Results}
+	\textbf{Approaches and Settings}
+	\begin{itemize}
+		\item k-Nearest Neighbors
+		\item Na\"ive Bayes
+		\item Decision Tree
+		\item Neural Network
+		\item Ensemble
+	\end{itemize}
 \end{frame}
 
-The different approaches used for the classification purpose and the corresponding results are described in the following sections. 
-\subsection{Approaches and Settings}
+\begin{frame}
+	\frametitle{k-Nearest Neighbors}
+	\begin{itemize}
+		\item parameter search on a leave-one-out cross validation
+		\item k=30 best (accuracy)
+		\item distance measure = euclidean distance
+		\item no distance weighting => better results
+	\end{itemize}
+\end{frame}
 
-\subsubsection*{k-Nearest Neighbors}
-The first approach we use is the k-Nearest Neighbors classifier. The
-parameter k is obtained by performing a parameter search on a
-leave-one-out cross validation. In terms of accuracy, \(k=30\) was
-the best choice. The distance measure is euclidean distance, the best
-results were obtained without distance weighting.
+\begin{frame}
+	\frametitle{Na\"ive Bayes}
+	Another approach is the Na\"ive Bayes classifier. Despite some
+	attributes obviously not being independent, it was still employed
+	because it proved to be useful in other areas as well.
+\end{frame}
 
-\subsubsection*{Na\"ive Bayes}
-Another approach is the Na\"ive Bayes classifier. Despite some
-attributes obviously not being independent, we still employed this
-classifier because it proved to be useful in other areas as well.
+\begin{frame}[fragile]
+	\frametitle{Decision Tree}
+	\begin{itemize}
+		\item prunes J48-decision tree
+		\item confidence factor =  \(c=0.045\)
+		\item found by utilizing WEKAs capabilities of linear
+		parameter search
+	\end{itemize}
+\end{frame}
 
-\subsubsection*{Decision Tree}
-We generated a pruned J48-decision tree. The best results were
-achieved by using a confidence factor of \(c=0.045\) for pruning the
-tree. This value was found by utilizing WEKAs capabilities of linear
-parameter search.
+\begin{frame}[fragile]
+	\frametitle{Neural Network}
+	\begin{itemize}
+		\item multilayer perceptron
+		\item 13 input neurons (features)
+		\item hidden layer of 17 neurons
+		\item output layer with three neurons (classes)
+		\item learning rate: \(\alpha=0.1\)
+		\item momentum:  \(m=0.1\) (backpropagation algorithm)
+		\item linear search for parameters: hidden neurons, learning rate and momentum
+	\end{itemize}
+\end{frame}
 
-\subsubsection*{Neural Network}
-A multilayer perceptron is used as a neural network. The structure
-consists of 13 input neurons (one for each feature), a hidden layer
-of 17 neurons precedes the output layer containing three neurons
-(one for each class). A learning rate of \(\alpha=0.1\) is used, a momentum of
-\(m=0.1\) is applied in each training step. The number of hidden
-neurons was found by conducting a linear search once again, testing
-all possible values between zero and 30.
+\begin{frame}
+	\frametitle{Ensemble}
+	In hope for enhanced results by combining the strenghts of the
+	different classifiers, all models were combined into an ensemble. The
+	vote of the whole ensemble was found by conducting a majority voting.
+\end{frame}
 
-\subsubsection*{Ensemble}
-In hope for enhanced results by combining the strenghts of the
-different classifiers, all models are combined into an ensemble. The
-vote of the whole ensemble is found by conducting a majority voting.
 
-\subsection{Results}
-To illustrate the accuracy of the different methods employed, the
-confusion matrices are presented here. All results are found using
-10-fold cross validation.
+\begin{frame}
+	\frametitle{Results}
+	\begin{itemize}
+		\item 10-fold cross validation
+	\end{itemize}
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.8\columnwidth]{../../charts/results.png}
+		\caption{Evaluation metrics of the different classifiers}
+		\label{fig:result}
+	\end{figure}
+\end{frame}
 
-The results of k-Nearest Neighbors are shown in \ref{tab:mat-knn}.
+\begin{frame}
+	\begin{table}[h]
+		\centering
+		\caption{Confusion matrix of the ensemble}
+		\label{tab:mat-vote}
+		\resizebox{\columnwidth}{!}{
+			\begin{tabular}[c]{c|ccc||c}
+				classified \(\rightarrow\) & \textbf{Low} & \textbf{Medium} & \textbf{High} & Total\\ \hline
+				Low & \textcolor{blue}{1125} & 126 & 8 & 1259 \\
+				Medium & 160 & \textcolor{blue}{305} & 57 & 522 \\
+				High & 15 & 95 & \textcolor{blue}{103} & 213 \\ \hline \hline
+				Total & 1300 & 526 & 168 & 1994 \\
+			\end{tabular}
+		}
+	\end{table}
+\end{frame}
 
-\begin{table}[H]
-	\centering
-	\caption{Confusion matrix of the k-Nearest Neighbors classifier with Manhattan distance}
-	\label{tab:mat-knn}
-	\resizebox{\columnwidth}{!}{
-		\begin{tabular}[c]{c|ccc||c}
-			classified \(\rightarrow\) & \textbf{Low} & \textbf{Medium} & \textbf{High} & Total\\ \hline
-			Low & \textcolor{blue}{1155} & 101 & 3 & 1259 \\
-			Medium & 181 & \textcolor{blue}{304} & 37 & 522 \\
-			High & 21 & 112 & \textcolor{blue}{80} & 213 \\ \hline \hline
-			Total & 1357 & 517 & 120 & 1994 \\
-		\end{tabular}
-	}
-\end{table}
 
-The results of the Na\"ive Bayes classifier are shown in \fref{tab:mat-nb}.
-\begin{table}[H]
-	\centering
-	\caption{Confusion matrix of the Na\"ive Bayes classifier}
-	\label{tab:mat-nb}
-	\resizebox{\columnwidth}{!}{
-		\begin{tabular}[c]{c|ccc||c}
-			classified \(\rightarrow\) & \textbf{Low} & \textbf{Medium} & \textbf{High} & Total\\ \hline
-			Low & \textcolor{blue}{1063} & 183 & 13 & 1259 \\
-			Medium & 137 & \textcolor{blue}{282} & 103 & 522 \\
-			High & 15 & 68 & \textcolor{blue}{130} & 213 \\ \hline \hline
-			Total & 1215 & 533 & 246 & 1994 \\
-		\end{tabular}
-	}
-\end{table}
+\begin{frame}
+	\frametitle{Recall}	
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.8\columnwidth]{../../charts/recall.png}
+		\caption{Recall of the different classifiers}
+		\label{fig:recall}
+	\end{figure}
+\end{frame}
 
-The confusion matrix of the decision tree is illustrated in \fref{tab:mat-tree}.
-\begin{table}[H]
-	\centering
-	\caption{Confusion matrix of the decision tree}
-	\label{tab:mat-tree}
-	\resizebox{\columnwidth}{!}{
-		\begin{tabular}[c]{c|ccc||c}
-			classified \(\rightarrow\) & \textbf{Low} & \textbf{Medium} & \textbf{High} & Total\\ \hline
-			Low & \textcolor{blue}{1135} & 111 & 13 & 1259 \\
-			Medium & 194 & \textcolor{blue}{277} & 51 & 522 \\
-			High & 23 & 105 & \textcolor{blue}{85} & 213 \\ \hline \hline
-			Total & 1352 & 493 & 149 & 1994 \\
-		\end{tabular}
-	}
-\end{table}
 
-The results of the neural network classifier can be found in \fref{tab:mat-nn}.
-\begin{table}[H]
-	\centering
-	\caption{Confusion matrix of the Neural Network}
-	\label{tab:mat-nn}
-	\resizebox{\columnwidth}{!}{
-		\begin{tabular}[c]{c|ccc||c}
-			classified \(\rightarrow\) & \textbf{Low} & \textbf{Medium} & \textbf{High} & Total\\ \hline
-			Low & \textcolor{blue}{1128} & 128 & 3 & 1259 \\
-			Medium & 168 & \textcolor{blue}{317} & 37 & 522 \\
-			High & 12 & 108 & \textcolor{blue}{93} & 213 \\ \hline \hline
-			Total & 1308 & 553 & 133 & 1994 \\
-		\end{tabular}
-	}
-\end{table}
+\subsection{Discussion and Outlook}
 
-The confusion matrix containing the results of the majority voting is given in \fref{tab:mat-vote}.
+As shown in figures \ref{fig:result} and \ref{fig:recall}, each of the
+classifiers does indeed have its own strengths and weaknesses.
+While k-Nearest Neighbors excels in terms of accuracy and overall
+recall, the Neural Network performs best in terms of precision and
+f-measure. A fairly interesting observation can be made when looking
+at the different recall values with respect to the class "High":
+Here, the Na\"ive Bayesian classifier achieves by far the most impressive
+results when compared to the other models. This turns out to be a
+contrast to the overall scores of this classifier, which are merely average.
 
-\begin{table}[H]
-	\centering
-	\caption{Confusion matrix of the ensemble}
-	\label{tab:mat-vote}
-	\resizebox{\columnwidth}{!}{
-		\begin{tabular}[c]{c|ccc||c}
-			classified \(\rightarrow\) & \textbf{Low} & \textbf{Medium} & \textbf{High} & Total\\ \hline
-			Low & \textcolor{blue}{1084} & 163 & 12 & 1259 \\
-			Medium & 138 & \textcolor{blue}{295} & 89 & 522 \\
-			High & 16 & 71 & \textcolor{blue}{126} & 213 \\ \hline \hline
-			Total & 1238 & 529 & 227 & 1994 \\
-		\end{tabular}
-	}
-\end{table}
+Contrary to our initial believe, that the combination of all
+classifiers into an ensemble would enhance the results, we have to
+admit, that this was not quite the case. Overall, the ensemble always
+ranks among the best, but it never reached top spot in any
+category. In fact it turned out to be worse than the Neural Network in
+every category except for the recall with respect to the class "High".
 
-An overview of the different evaluation metrics is presented in \fref{fig:result}.
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=\columnwidth]{../../charts/results.png}
-	\caption{Evaluation metrics of the different classifiers}
-	\label{fig:result}
-\end{figure}
+This seemingly paradox incidence can be explained when
+thinking about the effects of combining different classifiers: When
+merging the different models, not only the strengths are combined but
+also the weaknesses. This results in the observed pattern: By
+combining the classifiers, the strengths and weaknesses average out,
+thus the obtained results are also average.
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=\columnwidth]{../../charts/recall.png}
-	\caption{Recall of the different classifiers}
-	\label{fig:recall}
-\end{figure}
+It should be noted however, that there are methods to bias the results
+of the ensemble more towards the stronger side of the spectrum.
+By giving each of the voters a different weight, one could emphasize the
+strengths of one classifier and mitigate the weaknesses of
+another.
 
-\subsection{Discussion}
-
-Considering all the evaluation metrics shown in \fref{fig:result}, the Neural Network delivered the best results in every case. Contrary to the initial believe that the majority voting would enhance the results, it turned out that they were merely average. 
-
-To compare our results with those of \cite{indian}, it should be considered that on the one hand they used predefined ranges for their classification and on the other hand they used different attributes, mostly focusing on income and education.
-
+\noindent Nevertheless, developing such a method to intelligently balance the weights of an
+ensemble would most likely require further study, which
+could form the basis of another research project.
 
 \mode<all>
