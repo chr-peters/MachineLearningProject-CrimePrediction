@@ -1,30 +1,39 @@
+\mode*
 \begin{frame}
-  \frametitle{Discussion an Outlook}
+  \frametitle{Discussion and Outlook}
+  \onslide<+->
   \begin{itemize}
-    \item Each classifier has its strengths and weaknesses
+    \item<+-> Each classifier has its strengths and weaknesses
       \begin{itemize}
-        \item k-Nearest Neighbors excels in accuracy and overall recall
-        \item Neural Network scores best in terms of precision and f-measure
-        \item Na\"ive Bayes has extraordinary recall with respect to class "High"
+        \item<+-> k-Nearest Neighbors excels in accuracy and overall recall
+        \item<+-> Neural Network scores best in terms of precision and f-measure
+        \item<+-> Na\"ive Bayes has extraordinary recall with respect to class "High"
       \end{itemize}
-    \item Contrary to what we initially thought -- the ensemble was merely average
+    \item<+-> Contrary to what we initially thought -- the ensemble was merely average
       \begin{itemize}
-        \item Always among the best
-        \item Never reached top spot in any category
-      \end{itemize}
-    \item How can that be?
-      \begin{itemize}
-        \item Not only strengths are merged but weaknesses as well
-        \item Strengths and weaknesses average out
-      \end{itemize}
-    \item Can this be improved?
-      \begin{itemize}
-        \item In our case, each base learner had an equal weight
-        \item Improve the results by changing the weights
-        \item Emphasize strengths of one classifier (e.g. high recall
-          of Na\"ive Bayes), mitigate weaknesses of another
+        \item<+-> Always among the best
+        \item<+-> Never reached top spot in any category
       \end{itemize}
   \end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Discussion and Outlook}
+	\onslide<+->
+	\begin{itemize}
+		\item<+-> How can that be?
+		\begin{itemize}
+			\item<+-> Not only strengths are merged but weaknesses as well
+			\item<+-> Strengths and weaknesses average out
+		\end{itemize}
+		\item<+-> Can this be improved?
+		\begin{itemize}
+			\item<+-> In our case, each base learner had an equal weight
+			\item<+-> Improve the results by changing the weights
+			\item<+-> Emphasize strengths of one classifier (e.g. high recall
+			of Na\"ive Bayes), mitigate weaknesses of another
+		\end{itemize}
+	\end{itemize}
 \end{frame}
 
 \begin{frame}[c]
@@ -34,3 +43,4 @@
   
   \textbf{Any questions left?}
 \end{frame}
+\mode<all>

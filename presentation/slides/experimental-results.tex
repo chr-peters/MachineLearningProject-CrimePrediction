@@ -2,23 +2,25 @@
 \begin{frame}
  	\section{Experimental Results}
  	\frametitle{Experimental Results}
+ 	\onslide<+->
 	\textbf{Approaches and Settings}
 	\begin{itemize}
-		\item k-Nearest Neighbors
-		\item Na\"ive Bayes
-		\item Decision Tree
-		\item Neural Network
-		\item Ensemble
+		\item<+-> k-Nearest Neighbors
+		\item<+-> Na\"ive Bayes
+		\item<+-> Decision Tree
+		\item<+-> Neural Network
+		\item<+-> Ensemble
 	\end{itemize}
 \end{frame}
 
 \begin{frame}
 	\frametitle{k-Nearest Neighbors}
+	\onslide<+->
 	\begin{itemize}
-		\item parameter search on a leave-one-out cross validation
-		\item k=30 best (accuracy)
-		\item distance measure = euclidean distance
-		\item no distance weighting => better results
+		\item<+-> parameter search on a leave-one-out cross validation
+		\item<+-> k=30 best (accuracy)
+		\item<+-> distance measure = euclidean distance
+		\item<+-> no distance weighting => better results
 	\end{itemize}
 \end{frame}
 
@@ -31,32 +33,37 @@
 
 \begin{frame}[fragile]
 	\frametitle{Decision Tree}
+	\onslide<+->
 	\begin{itemize}
-		\item prunes J48-decision tree
-		\item confidence factor =  \(c=0.045\)
-		\item found by utilizing WEKAs capabilities of linear
+		\item<+-> prunes J48-decision tree
+		\item<+-> confidence factor =  \(c=0.045\)
+		\item<+-> found by utilizing WEKAs capabilities of linear
 		parameter search
 	\end{itemize}
 \end{frame}
 
 \begin{frame}[fragile]
 	\frametitle{Neural Network}
+	\onslide<+->
 	\begin{itemize}
-		\item multilayer perceptron
-		\item 13 input neurons (features)
-		\item hidden layer of 17 neurons
-		\item output layer with three neurons (classes)
-		\item learning rate: \(\alpha=0.1\)
-		\item momentum:  \(m=0.1\) (backpropagation algorithm)
-		\item linear search for parameters: hidden neurons, learning rate and momentum
+		\item<+-> multilayer perceptron
+		\item<+-> 13 input neurons (features)
+		\item<+-> hidden layer of 17 neurons
+		\item<+-> output layer with three neurons (classes)
+		\item<+-> learning rate: \(\alpha=0.1\)
+		\item<+-> momentum:  \(m=0.1\) (backpropagation algorithm)
+		\item<+-> linear search for parameters: hidden neurons, learning rate and momentum
 	\end{itemize}
 \end{frame}
 
 \begin{frame}
 	\frametitle{Ensemble}
-	In hope for enhanced results by combining the strenghts of the
-	different classifiers, all models were combined into an ensemble. The
-	vote of the whole ensemble was found by conducting a majority voting.
+	\onslide<+->
+	\begin{itemize}
+		\item<+-> Combine all models into an ensemble
+		\item<+-> should combine the strength of the different classifiers
+		\item<+-> ensemble was found by conducting a majority voting
+	\end{itemize}
 \end{frame}
 
 
@@ -67,7 +74,7 @@
 	\end{itemize}
 	\begin{figure}[h]
 		\centering
-		\includegraphics[width=0.8\columnwidth]{../../charts/results.png}
+		\includegraphics[width=0.7\columnwidth]{../../charts/results.png}
 		\caption{Evaluation metrics of the different classifiers}
 		\label{fig:result}
 	\end{figure}
@@ -95,47 +102,9 @@
 	\frametitle{Recall}	
 	\begin{figure}[h]
 		\centering
-		\includegraphics[width=0.8\columnwidth]{../../charts/recall.png}
+		\includegraphics[width=0.7\columnwidth]{../../charts/recall.png}
 		\caption{Recall of the different classifiers}
 		\label{fig:recall}
 	\end{figure}
 \end{frame}
-
-
-\subsection{Discussion and Outlook}
-
-As shown in figures \ref{fig:result} and \ref{fig:recall}, each of the
-classifiers does indeed have its own strengths and weaknesses.
-While k-Nearest Neighbors excels in terms of accuracy and overall
-recall, the Neural Network performs best in terms of precision and
-f-measure. A fairly interesting observation can be made when looking
-at the different recall values with respect to the class "High":
-Here, the Na\"ive Bayesian classifier achieves by far the most impressive
-results when compared to the other models. This turns out to be a
-contrast to the overall scores of this classifier, which are merely average.
-
-Contrary to our initial believe, that the combination of all
-classifiers into an ensemble would enhance the results, we have to
-admit, that this was not quite the case. Overall, the ensemble always
-ranks among the best, but it never reached top spot in any
-category. In fact it turned out to be worse than the Neural Network in
-every category except for the recall with respect to the class "High".
-
-This seemingly paradox incidence can be explained when
-thinking about the effects of combining different classifiers: When
-merging the different models, not only the strengths are combined but
-also the weaknesses. This results in the observed pattern: By
-combining the classifiers, the strengths and weaknesses average out,
-thus the obtained results are also average.
-
-It should be noted however, that there are methods to bias the results
-of the ensemble more towards the stronger side of the spectrum.
-By giving each of the voters a different weight, one could emphasize the
-strengths of one classifier and mitigate the weaknesses of
-another.
-
-\noindent Nevertheless, developing such a method to intelligently balance the weights of an
-ensemble would most likely require further study, which
-could form the basis of another research project.
-
 \mode<all>

@@ -3,45 +3,47 @@
 \begin{frame}
   \section{Introduction}
   \frametitle{Motivation}
+  \onslide<+->
   \begin{itemize}
-    \item Limited resources regarding fighting crimes
+    \item<+-> Limited resources regarding fighting crimes
       \begin{itemize}
-        \item Limited amounts of money
-        \item Limited number of police officers
+        \item<+-> Limited amounts of money
+        \item<+-> Limited number of police officers
       \end{itemize}
-    \item Goal: Help those who distribute the resources
-    \item Predict criminal category of city
+    \item<+-> Goal: Help those who distribute the resources
+    \item<+-> Predict criminal category of city
       \begin{itemize}
-        \item Either "High", "Medium" or "Low"
-        \item Depends on the crime rate
+        \item<+-> Either "High", "Medium" or "Low"
+        \item<+-> Depends on the crime rate
       \end{itemize}
-    \item Makes it possible to simulate how certain influences impact the crime category
+    \item<+-> Makes it possible to simulate how certain influences impact the crime category
       \begin{itemize}
-        \item Unemployment
-        \item Median household income
-        \item \ldots
+        \item<+-> Unemployment
+        \item<+-> Median household income
+        \item<+-> \ldots
       \end{itemize}
   \end{itemize}
 \end{frame}
 
 \begin{frame}
   \frametitle{Method}
+  \onslide<+->
   \begin{enumerate}
-    \item Select most important features of a city
-    \item Train basic classifiers using WEKA
+    \item<+-> Select most important features of a city
+    \item<+-> Train basic classifiers using WEKA
       \begin{itemize}
-        \item k-Nearest Neighbors
-        \item Na\"ive Bayes
-        \item Decision Tree
-        \item Neural Network
+        \item<+-> k-Nearest Neighbors
+        \item<+-> Na\"ive Bayes
+        \item<+-> Decision Tree
+        \item<+-> Neural Network
       \end{itemize}
-    \item Combine the classifiers into an ensemble
+    \item<+-> Combine the classifiers into an ensemble
       \begin{itemize}
-        \item Majority vote
+        \item<+-> Majority vote
       \end{itemize}
-    \item Evaluate the results
+    \item<+-> Evaluate the results
       \begin{itemize}
-        \item Accuracy, Precision, Recall, F-Measure
+        \item<+-> Accuracy, Precision, Recall, F-Measure
       \end{itemize}
   \end{enumerate}
 \end{frame}

@@ -3,38 +3,40 @@
 \begin{frame}
 	\section{Data Preparation}
 	\frametitle{Data Preparation}
+	\onslide<+->
         \begin{itemize}
-          \item Before the classification can be done, a few steps are required on the raw data
-          \item Original dataset does not contain the class labels ("High", "Medium", "Low")
+          \item<+-> Before the classification can be done, a few steps are required on the raw data
+          \item<+-> Original dataset does not contain the class labels ("High", "Medium", "Low")
             \begin{itemize}
-              \item How to assign each instance a crime category based on its crime rate?
-              \item How to find the percentage boundaries between the classes?
+              \item<+-> How to assign each instance a crime category based on its crime rate?
+              \item<+-> How to find the percentage boundaries between the classes?
             \end{itemize}
-          \item Curse of dimensionality
+          \item<+-> Curse of dimensionality
             \begin{itemize}
-              \item Huge number of attributes (128 per city)
-              \item Select only the most significant
-              \item Reduce the dimensionality of the feature space
+              \item<+-> Huge number of attributes (128 per city)
+              \item<+-> Select only the most significant
+              \item<+-> Reduce the dimensionality of the feature space
             \end{itemize}
         \end{itemize}
 \end{frame}
 
 \begin{frame}
   \frametitle{Assignment of Class Labels}
+  \onslide<+->
   \begin{itemize}
-    \item Divide the attribute "crime rate" into different groups
+    \item<+-> Divide the attribute "crime rate" into different groups
       \begin{itemize}
-        \item Initial question: How many groups?
-        \item What are the boundaries between the groups?
+        \item<+-> Initial question: How many groups?
+        \item<+-> What are the boundaries between the groups?
       \end{itemize}
-    \item Use clustering to solve this problem
+    \item<+-> Use clustering to solve this problem
       \begin{itemize}
-        \item Simple k-Means clustering algorithm
-        \item Only cluster the crime rate (i.e. only one dimension)
-        \item Test different k values (different amounts of groups)
-        \item Find the boundaries between the groups
+        \item<+-> Simple k-Means clustering algorithm
+        \item<+-> Only cluster the crime rate (i.e. only one dimension)
+        \item<+-> Test different k values (different amounts of groups)
+        \item<+-> Find the boundaries between the groups
       \end{itemize}
-    \item Each cluster will be assigned a label (e.g. "High", "Medium", "Low",\ldots crime rate)
+    \item<+-> Each cluster will be assigned a label (e.g. "High", "Medium", "Low",\ldots crime rate)
   \end{itemize}
 \end{frame}
 
@@ -50,37 +52,39 @@
 
 \begin{frame}
   \frametitle{Assignment of Class Labels}
+  \onslide<+->
   \begin{itemize}
-    \item By using the elbow-method, \(k=3\) is the best choice
+    \item<+-> By using the elbow-method, \(k=3\) is the best choice
       \begin{itemize}
-        \item This means to divide the crime rate into three groups ("High", "Medium", "Low")
+        \item<+-> This means to divide the crime rate into three groups ("High", "Medium", "Low")
       \end{itemize}
-    \item The percentage boundaries are extracted from the clusters
+    \item<+-> The percentage boundaries are extracted from the clusters
       \begin{itemize}
-        \item Low: \([0\%; 22\%]\) 
-	\item Medium: \((22\%; 56\%]\)
-	\item High: \((56\%; 100\%]\)
+        \item<+-> Low: \([0\%; 22\%]\) 
+	\item<+-> Medium: \((22\%; 56\%]\)
+	\item<+-> High: \((56\%; 100\%]\)
       \end{itemize}
-    \item Depending on the group it falls into, each instance (city) can now be assigned a label
+    \item<+-> Depending on the group it falls into, each instance (city) can now be assigned a label
   \end{itemize}
 \end{frame}
 
 \begin{frame}
   \frametitle{Feature Selection}
+  \onslide<+->
   \begin {itemize}
-    \item Two-step approach:
+    \item<+-> Two-step approach:
       \begin{enumerate}
-        \item Create a ranking by judgement of significance
+        \item<+-> Create a ranking by judgement of significance
           \begin{itemize}
-            \item Discuss each attribute
-            \item Agree if it is included or not
+            \item<+-> Discuss each attribute
+            \item<+-> Agree if it is included or not
           \end{itemize}
-        \item Generate a ranking based on the correlation between each attribute and the class labels
+        \item<+-> Generate a ranking based on the correlation between each attribute and the class labels
       \end{enumerate}
-    \item Compare the judgement ranking with the correlation ranking
-    \item Add some features with high correlation and remove some with low correlation
+    \item<+-> Compare the judgement ranking with the correlation ranking
+    \item<+-> Add some features with high correlation and remove some with low correlation
       \begin{itemize}
-        \item E.g. the attribute "population" was removed because of a correlation near zero
+        \item<+-> E.g. the attribute "population" was removed because of a correlation near zero
       \end{itemize}
   \end{itemize}
 \end{frame}
