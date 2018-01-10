@@ -26,17 +26,20 @@ A multilayer perceptron is used as a neural network. The structure
 consists of 13 input neurons (one for each feature), a hidden layer
 of 17 neurons precedes the output layer containing three neurons
 (one for each class). A learning rate of \(\alpha=0.1\) is used, a momentum of
-\(m=0.1\) is applied in each training step. The number of hidden
+\(m=0.1\) is applied in each training step of the backpropagation
+algorithm. The number of hidden
 neurons was found by conducting a linear search once again, testing
-all possible values between zero and 30.
+all possible values between zero and 30. The same procedure was
+applied in order to determine the optimal learning rate as well as the
+momentum term.
 
 \subsubsection*{Ensemble}
 In hope for enhanced results by combining the strenghts of the
-different classifiers, all models are combined into an ensemble. The
-vote of the whole ensemble is found by conducting a majority voting.
+different classifiers, all models were combined into an ensemble. The
+vote of the whole ensemble was found by conducting a majority voting.
 
 \subsection{Results}
-Each classifier as well as the ensemble was evaluated by using 10-fold
+Each classifier as well as the ensemble was evaluated using 10-fold
 cross validation.
 As a result, a comparison of the different evaluation metrics can
 be found in \fref{fig:result}.
@@ -58,10 +61,10 @@ confusion matrix in \fref{tab:mat-vote}.
 	\resizebox{\columnwidth}{!}{
 		\begin{tabular}[c]{c|ccc||c}
 			classified \(\rightarrow\) & \textbf{Low} & \textbf{Medium} & \textbf{High} & Total\\ \hline
-			Low & \textcolor{blue}{1084} & 163 & 12 & 1259 \\
-			Medium & 138 & \textcolor{blue}{295} & 89 & 522 \\
-			High & 16 & 71 & \textcolor{blue}{126} & 213 \\ \hline \hline
-			Total & 1238 & 529 & 227 & 1994 \\
+			Low & \textcolor{blue}{1125} & 126 & 8 & 1259 \\
+			Medium & 160 & \textcolor{blue}{305} & 57 & 522 \\
+			High & 15 & 95 & \textcolor{blue}{103} & 213 \\ \hline \hline
+			Total & 1300 & 526 & 168 & 1994 \\
 		\end{tabular}
 	}
 \end{table}
@@ -151,7 +154,7 @@ f-measure. A fairly interesting observation can be made when looking
 at the different recall values with respect to the class "High":
 Here, the Na\"ive Bayesian classifier achieves by far the most impressive
 results when compared to the other models. This turns out to be a
-contrast to the overall results of this classifier, which are merely average.
+contrast to the overall scores of this classifier, which are merely average.
 
 Contrary to our initial believe, that the combination of all
 classifiers into an ensemble would enhance the results, we have to
@@ -170,7 +173,7 @@ thus the obtained results are also average.
 It should be noted however, that there are methods to bias the results
 of the ensemble more towards the stronger side of the spectrum.
 By giving each of the voters a different weight, one could emphasize the
-strengths of one classifier and neglect the weaknesses of
+strengths of one classifier and mitigate the weaknesses of
 another.
 
 \noindent Nevertheless, developing such a method to intelligently balance the weights of an
