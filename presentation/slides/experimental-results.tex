@@ -26,17 +26,21 @@
 
 \begin{frame}
 	\frametitle{Na\"ive Bayes}
-	Another approach is the Na\"ive Bayes classifier. Despite some
-	attributes obviously not being independent, it was still employed
-	because it proved to be useful in other areas as well.
+        \begin{itemize}
+          \item<+-> Useful in may areas (text classification, medical diagnosis, \ldots)
+          \item<+-> Still employed although the features are obviously not independent
+          \begin{itemize}
+            \item<+-> For example "median income" is clearly related to "number of people below the poverty level"
+          \end{itemize}
+        \end{itemize}
 \end{frame}
 
 \begin{frame}[fragile]
 	\frametitle{Decision Tree}
 	\onslide<+->
 	\begin{itemize}
-		\item<+-> prunes J48-decision tree
-		\item<+-> confidence factor =  \(c=0.045\)
+		\item<+-> pruned J48-decision tree
+		\item<+-> confidence factor \(c=0.045\)
 		\item<+-> found by utilizing WEKAs capabilities of linear
 		parameter search
 	\end{itemize}
@@ -60,18 +64,26 @@
 	\frametitle{Ensemble}
 	\onslide<+->
 	\begin{itemize}
-		\item<+-> Combine all models into an ensemble
-		\item<+-> should combine the strength of the different classifiers
-		\item<+-> ensemble was found by conducting a majority voting
+		\item<+-> Merge all models into an ensemble
+		\item<+-> Goal: Combine the strengths of the different classifiers
+		\item<+-> Choice of ensemble was found by conducting a majority voting
 	\end{itemize}
 \end{frame}
 
+\begin{frame}
+  \frametitle{Results}
+  \begin{itemize}
+    \item<+-> The results of each classifier were evaluated using
+      10-fold cross validation
+    \item<+-> Common evaluation metrics allow for comparison
+      \begin{itemize}
+        \item Accuracy, Precision, Recall, F-Measure
+      \end{itemize}
+  \end{itemize}
+\end{frame}
 
 \begin{frame}
 	\frametitle{Results}
-	\begin{itemize}
-		\item 10-fold cross validation
-	\end{itemize}
 	\begin{figure}[h]
 		\centering
 		\includegraphics[width=0.7\columnwidth]{../../charts/results.png}
@@ -81,11 +93,12 @@
 \end{frame}
 
 \begin{frame}
+        \frametitle{Results}
 	\begin{table}[h]
 		\centering
 		\caption{Confusion matrix of the ensemble}
 		\label{tab:mat-vote}
-		\resizebox{\columnwidth}{!}{
+		\resizebox{0.7\columnwidth}{!}{
 			\begin{tabular}[c]{c|ccc||c}
 				classified \(\rightarrow\) & \textbf{Low} & \textbf{Medium} & \textbf{High} & Total\\ \hline
 				Low & \textcolor{blue}{1125} & 126 & 8 & 1259 \\
