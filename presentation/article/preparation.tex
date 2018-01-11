@@ -3,14 +3,14 @@
 Before the classification can be done, a few preparation steps on the raw dataset
 are required, namely the assignment of class labels to each instance as
 well as feature selection to reduce the set of attributes to an
-acceptable size, i.e. to reduce the dimension of the feature space.
+acceptable size, i.e. to reduce the dimensionality of the feature space.
 
 \subsection{Assignment of Class Labels}
 \label{sec:assignment}
 
 To obtain the class labels used for classification, the
 continuous attribute "total number of violent crimes per 100K
-population" is divided into separate groups. Each of this groups is
+population" is divided into separate groups. Each group is
 assigned an ordinal class label that can be predicted during classification.
 If for example the number of groups is equal to three, one could
 assign the labels "High", "Medium" and "Low" to the corresponding
@@ -18,24 +18,24 @@ groups.
 
 The simple k-Means clustering algorithm is used to achieve this
 by comparing different amounts of groups, i.e. testing
-different values of k. Those different k values were compared by using
-the elbow-method and \(k=3\) was revealed as the best parameter as
-shown in \fref{fig:sse}.
+different values of k. The optimal value of k (\(k=3\)) was determined using the elbow-method, as shown in \fref{fig:sse}.
+
 \begin{figure}[H]
   \centering
   \includegraphics[width=\columnwidth]{../../charts/SSE.png}
   \caption{Sum of the squared errors for different choices of k}
   \label{fig:sse}
 \end{figure}
+\vspace*{-0.2cm}
 \noindent The three classes originating from this choice are namely
-"High", "Medium" and "Low", the percentage boundaries are
-respectively:
+"High", "Medium" and "Low", the percentage boundaries obtained during the clustering process result in the following intervals:
 \begin{description}
   \setlength{\itemsep}{-2pt}
 \item[Low:] \([0\%; 22\%]\) 
 \item[Medium:] \((22\%; 56\%]\)
 \item[High:] \((56\%; 100\%]\)
 \end{description}
+It should be noted, that the percentage boundaries are not to be confused with the actual crime rate, because this feature was normalized before. 
 %% It should be noted, that the authors of \textit{"An Experimental Study
 %% of Classification Algorithms for Crime Prediction"} \cite{indian}
 %% obtained different results for the percentage boundaries, they did
@@ -59,6 +59,6 @@ significant.
 In the second step, we compared our choices with the attributes that
 have the highest correlation with the classes. We found that the
 majority of the attributes that we selected based on common sense was
-already present in the ranking, however a few attributes like
+already present in the ranking. However, a few attributes like
 "population" were discarded because of a correlation near zero.
 

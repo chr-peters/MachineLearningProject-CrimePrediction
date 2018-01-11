@@ -41,20 +41,20 @@ vote of the whole ensemble was found by conducting a majority voting.
 \subsection{Results}
 Each classifier as well as the ensemble was evaluated using 10-fold
 cross validation.
-As a result, a comparison of the different evaluation metrics can
+As a result, the comparison of the different evaluation metrics can
 be found in \fref{fig:result}.
 
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering
 	\includegraphics[width=\columnwidth]{../../charts/results.png}
 	\caption{Evaluation metrics of the different classifiers}
 	\label{fig:result}
 \end{figure}
 
-\noindent The detailed results of the ensemble learner are illustrated in a
+\noindent The detailed results of the ensemble learner are illustrated in the corresponding
 confusion matrix in \fref{tab:mat-vote}.
 
-\begin{table}[h]
+\begin{table}[H]
 	\centering
 	\caption{Confusion matrix of the ensemble}
 	\label{tab:mat-vote}
@@ -69,10 +69,10 @@ confusion matrix in \fref{tab:mat-vote}.
 	}
 \end{table}
 
-\noindent The recall of the classifiers with respect to each of the classes is given in
-\fref{fig:recall}.
+\noindent The recall of the classifiers with respect to each class is given in
+\ref{fig:recall}.
 
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering
 	\includegraphics[width=\columnwidth]{../../charts/recall.png}
 	\caption{Recall of the different classifiers}
@@ -146,7 +146,7 @@ confusion matrix in \fref{tab:mat-vote}.
 
 \subsection{Discussion and Outlook}
 
-As shown in figures \ref{fig:result} and \ref{fig:recall}, each of the
+As shown in figures \ref{fig:result} and \ref{fig:recall}, each
 classifiers does indeed have its own strengths and weaknesses.
 While k-Nearest Neighbors excels in terms of accuracy and overall
 recall, the Neural Network performs best in terms of precision and
@@ -156,7 +156,7 @@ Here, the Na\"ive Bayesian classifier achieves by far the most impressive
 results when compared to the other models. This turns out to be a
 contrast to the overall scores of this classifier, which are merely average.
 
-Contrary to our initial believe, that the combination of all
+Contrary to our initial believe that the combination of all
 classifiers into an ensemble would enhance the results, we have to
 admit, that this was not quite the case. Overall, the ensemble always
 ranks among the best, but it never reached top spot in any
@@ -176,6 +176,6 @@ By giving each of the voters a different weight, one could emphasize the
 strengths of one classifier and mitigate the weaknesses of
 another.
 
-\noindent Nevertheless, developing such a method to intelligently balance the weights of an
+Nevertheless, developing such a method to intelligently balance the weights of an
 ensemble would most likely require further study, which
 could form the basis of another research project.
