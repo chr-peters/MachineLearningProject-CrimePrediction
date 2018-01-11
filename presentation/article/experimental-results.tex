@@ -16,13 +16,13 @@ attributes obviously not being independent, it was still employed
 because it proved to be useful in other areas as well.
 
 \subsubsection*{Decision Tree}
-We generated a pruned J48-decision tree. The best results were
+We generated a pruned J48-Decision Tree. The best results were
 achieved by using a confidence factor of \(c=0.045\) for pruning the
 tree. This value was found by utilizing WEKAs capabilities of linear
 parameter search.
 
 \subsubsection*{Neural Network}
-A multilayer perceptron is used as a neural network. The structure
+A multilayer perceptron is used as a Neural Network. The structure
 consists of 13 input neurons (one for each feature), a hidden layer
 of 17 neurons precedes the output layer containing three neurons
 (one for each class). A learning rate of \(\alpha=0.1\) is used, a momentum of
@@ -69,7 +69,7 @@ confusion matrix in \fref{tab:mat-vote}.
 	}
 \end{table}
 
-\noindent The recall of the classifiers with respect to each class is given in
+\noindent The recall of the classifiers with respect to each class is given in figure
 \ref{fig:recall}.
 
 \begin{figure}[H]
@@ -147,7 +147,7 @@ confusion matrix in \fref{tab:mat-vote}.
 \subsection{Discussion and Outlook}
 
 As shown in figures \ref{fig:result} and \ref{fig:recall}, each
-classifiers does indeed have its own strengths and weaknesses.
+classifier does indeed have its own strengths and weaknesses.
 While k-Nearest Neighbors excels in terms of accuracy and overall
 recall, the Neural Network performs best in terms of precision and
 f-measure. A fairly interesting observation can be made when looking
